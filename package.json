@@ -33,8 +33,15 @@
       "last 1 safari version"
     ]
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.23.2",
+    "@babel/plugin-proposal-private-property-in-object": "^7.0.0",
     "@babel/eslint-parser": "^7.22.15",
     "@babel/plugin-syntax-jsx": "^7.22.5",
     "@babel/preset-react": "^7.22.15",
