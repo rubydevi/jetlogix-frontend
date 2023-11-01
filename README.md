@@ -1,10 +1,9 @@
 <div align="center">
- <img src="app-logo.png" alt="logo" width="140"  height="auto" />
+ <img src="./public/app-logo.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h1><b>JetLogix</b></h1>
 
 </div>
-
 
 <a name="readme-top"></a>
 
@@ -34,19 +33,15 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [JetLogix] <a name="about-project"></a>
 
 JetLogix's front end is a React application that fetches and displays information from the [JetLogix back-end](https://github.com/rubydevi/jetlogix-backend) via API endpoints, ensuring a seamless user interface for private jet reservations. Its engaging design delivers an immersive experience, allowing users to efficiently browse, select, and reserve private jets
 
-
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-
 
   <ul>
     <li><a href="https://reactjs.org/">React</a></li>
@@ -60,7 +55,6 @@ JetLogix's front end is a React application that fetches and displays informatio
     <li><a href="https://reactrouter.com/">React Router</a></li>
   </ul>
 
-
   <ul>
     <li><a href="https://testing-library.com/docs/react-testing-library/intro/">react Testing Library</a></li>
   </ul>
@@ -68,9 +62,6 @@ JetLogix's front end is a React application that fetches and displays informatio
  <ul>
     <li><a href="https://babeljs.io/">Babel</a></li>
   </ul>
-
-
-
 
 <!--
 <summary>Rubocop</summary>
@@ -85,11 +76,10 @@ JetLogix's front end is a React application that fetches and displays informatio
     <li><a href="https://rubygems.org/gems/selenium-webdriver/versions/4.4.0">Selenium Web driver</a></li>
   </ul> -->
 
-
-
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
+
 > Make Private Jet Reservations
 
 > View, modify, and cancel reservations.
@@ -110,7 +100,7 @@ JetLogix's front end is a React application that fetches and displays informatio
 
 > Live Demo of this application:
 
-- [Live Demo Link](https:// )
+- [Live Demo Link](https://)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,7 +108,7 @@ JetLogix's front end is a React application that fetches and displays informatio
 
 > Video Presentation of this application:
 
-- [Video Presentation]( )
+- [Video Presentation]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
@@ -135,11 +125,9 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-
 ```sh
   git clone   https://github.com/rubydevi/jetlogix-frontend.git
 ```
-
 
 ### Install
 
@@ -154,11 +142,9 @@ Install this project with:
 
 To run the project, you will need to execute:
 
-
 ```sh
    npm start
 ```
-
 
 <!-- ### Run tests
 
@@ -168,7 +154,6 @@ To run tests, run the following command:
 ```sh
   Rspec spec  or bundle exec rspec spec
 ``` -->
-
 
 <!-- ### Deployment
 
@@ -205,18 +190,15 @@ Example:
 - Twitter: [@rilecodez](https://twitter.com/rileycodez)
 - LinkedIn: [rileymanda](https://www.linkedin.com/in/rileymanda/)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-
 > Video Presentation demo of the project
 
 > Deploy the application on render
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -233,15 +215,16 @@ Feel free to check the [issues page](https://github.com/rubydevi/jetlogix-fronte
 <!-- SUPPORT -->
 
 <!-- SUPPORT -->
+
 ## <b>Show your support 🌟</b><a name="support"></a>
 
 Thank you for taking the time to explore this project! Your support means a lot to me. If you find my project valuable and would like to contribute, here is one way you can support me:
 
- - <b>Star the project ⭐️</b>: Show your appreciation by starring this GitHub repository. It helps increase visibility and lets others know that the project is well-received.
+- <b>Star the project ⭐️</b>: Show your appreciation by starring this GitHub repository. It helps increase visibility and lets others know that the project is well-received.
 
- - <b>Fork the project 🍴 🎣</b>: If you're interested in making improvements or adding new features, feel free to fork the project. You can work on your own version and even submit pull requests to suggest changes.
+- <b>Fork the project 🍴 🎣</b>: If you're interested in making improvements or adding new features, feel free to fork the project. You can work on your own version and even submit pull requests to suggest changes.
 
- - <b>Share with others 🗺️</b>: Spread the word about this project. Share it on social media, mention it in relevant forums or communities, or recommend it to colleagues and friends who might find it useful.
+- <b>Share with others 🗺️</b>: Spread the word about this project. Share it on social media, mention it in relevant forums or communities, or recommend it to colleagues and friends who might find it useful.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -265,13 +248,11 @@ I would like to express my sincere gratitude to [Microverse](https://github.com/
 
     You can use any one of your favortite or prefered editors<br>
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ATTRIBUTION -->
  <!-- ## 👥 Attribution <a name="attribution"></a>
 - ProjectIcon: [Svgrepo](https://www.svgrepo.com/) -->
-
 
 <!-- LICENSE -->
 
