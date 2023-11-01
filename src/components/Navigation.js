@@ -50,13 +50,14 @@ const Navigation = () => {
         <NavLink to="/delete_aeroplane" className="list-group-item list-group-item-action">
           Delete Aeroplane
         </NavLink>
-
-        <div className="footer-icons">
-          <FaTwitter />
-          <FaFacebook />
-          <FaGooglePlus />
-          <FaPinterest />
-          <FaVimeo />
+        <div className="mt-auto">
+          <div className="footer-icons d-flex justify-content-around">
+            <FaTwitter className="mx-2" />
+            <FaFacebook className="mx-2" />
+            <FaGooglePlus className="mx-2" />
+            <FaPinterest className="mx-2" />
+            <FaVimeo className="mx-2" />
+          </div>
         </div>
       </div>
     </div>
