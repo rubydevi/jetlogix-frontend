@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import {
-  FaTwitter, FaFacebook, FaGooglePlus, FaPinterest, FaVimeo,
-} from 'react-icons/fa';
 import { useNavigation } from './NavigationContext';
 import logo from '../assets/app-logo.png';
+import NavFooter from './NavFooter';
 
 const Navigation = () => {
   const { isOpen } = useNavigation();
@@ -49,16 +47,7 @@ const Navigation = () => {
         <NavLink to="/delete_aeroplane" className="list-group-item list-group-item-action">
           Delete Aeroplane
         </NavLink>
-        <div className="mt-auto">
-          <div className="footer-icons d-flex justify-content-around mt-auto">
-            <FaTwitter className="mx-2" />
-            <FaFacebook className="mx-2" />
-            <FaGooglePlus className="mx-2" />
-            <FaPinterest className="mx-2" />
-            <FaVimeo className="mx-2" />
-          </div>
-          <p>@2023 JetLogix</p>
-        </div>
+        <NavFooter />
       </div>
     </div>
   );
