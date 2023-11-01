@@ -1,10 +1,9 @@
 import React from 'react';
 
-export default function Aeroplanes() {
+export default function DeleteAeroplane() {
   return (
     <div>
-      Aeroplanes
-
+      DeleteAeroplane
     </div>
   );
 }

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import {
+  FaTwitter, FaFacebook, FaGooglePlus, FaPinterest, FaVimeo,
+} from 'react-icons/fa';
 import { useNavigation } from './NavigationContext';
 import logo from '../assets/app-logo.png';
 
@@ -39,7 +42,7 @@ const Navigation = () => {
           Reserve
         </NavLink>
         <NavLink to="/reservations" className="list-group-item list-group-item-action">
-          My reservations
+          My Reservations
         </NavLink>
         <NavLink to="/add_aeroplane" className="list-group-item list-group-item-action">
           Add Aeroplane
@@ -48,6 +51,13 @@ const Navigation = () => {
           Delete Aeroplane
         </NavLink>
 
+        <div className="footer-icons">
+          <FaTwitter />
+          <FaFacebook />
+          <FaGooglePlus />
+          <FaPinterest />
+          <FaVimeo />
+        </div>
       </div>
     </div>
   );

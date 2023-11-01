@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Aeroplanes() {
+export default function AddAeroplane() {
   return (
     <div>
-      Aeroplanes
+      AddAeroplane
 
     </div>
   );
