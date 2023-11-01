@@ -12,7 +12,7 @@ const NavFooter = () => (
       <FaPinterest className="mx-2" />
       <FaVimeo className="mx-2" />
     </div>
-    <p>@2023 JetLogix</p>
+    <p className="text-muted small">@2023 JetLogix</p>
   </div>
 );
 
