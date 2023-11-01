@@ -57,7 +57,7 @@ const Navigation = () => {
             <FaPinterest className="mx-2" />
             <FaVimeo className="mx-2" />
           </div>
-          <p>All right reserved</p>
+          <p>@2023 JetLogix</p>
         </div>
       </div>
     </div>

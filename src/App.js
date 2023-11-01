@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { NavigationProvider } from './components/NavigationContext';
 import Navigation from './components/Navigation';
-import CenterContainer from './components/CenterContainer';
+import CenterContainer from './components/styledcomponents/CenterContainer';
 import Home from './components/Home';
 import Reservations from './components/Reservations';
 import Aeroplanes from './components/Aeroplanes';
