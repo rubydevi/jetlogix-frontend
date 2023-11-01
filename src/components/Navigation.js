@@ -24,14 +24,13 @@ const Navigation = () => {
 
   return (
     <div
-      className={`position-fixed vh-100 bg-light border-end ${(isOpen && isMobile) ? 'w-50' : 'w-0'
-      }`}
+      className={`position-fixed vh-100 bg-light border-end d-flex flex-column ${(isOpen && isMobile) ? 'w-50' : 'w-0'}`}
       id="sidebar-wrapper"
     >
       <div className="sidebar-heading">
         <img alt="Logo" src={logo} className="img-fluid" style={{ width: '150px' }} />
       </div>
-      <div className="list-group list-group-flush">
+      <div className="list-group list-group-flush flex-grow-1">
         <NavLink exact to="/" className="list-group-item list-group-item-action">
           Home
         </NavLink>
@@ -51,13 +50,14 @@ const Navigation = () => {
           Delete Aeroplane
         </NavLink>
         <div className="mt-auto">
-          <div className="footer-icons d-flex justify-content-around">
+          <div className="footer-icons d-flex justify-content-around mt-auto">
             <FaTwitter className="mx-2" />
             <FaFacebook className="mx-2" />
             <FaGooglePlus className="mx-2" />
             <FaPinterest className="mx-2" />
             <FaVimeo className="mx-2" />
           </div>
+          <p>All right reserved</p>
         </div>
       </div>
     </div>
