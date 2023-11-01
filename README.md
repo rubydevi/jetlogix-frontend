@@ -1,70 +1,263 @@
-# Getting Started with Create React App
+<div align="center">
+ <img src="./public/app-logo.png" alt="logo" width="140"  height="auto" />
+  <br/>
+  <h1><b>JetLogix</b></h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</div>
 
-## Available Scripts
+<a name="readme-top"></a>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
 
-### `npm start`
+# 📗 Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+    - [🚀 Live Demo](#live-demo)
+    - [💻 Presentation](#video-presentation)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [🙏 Attribution](#attribution)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- PROJECT DESCRIPTION -->
 
-### `npm test`
+# 📖 [JetLogix] <a name="about-project"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+JetLogix's front end is a React application that fetches and displays information from the [JetLogix back-end](https://github.com/rubydevi/jetlogix-backend) via API endpoints, ensuring a seamless user interface for private jet reservations. Its engaging design delivers an immersive experience, allowing users to efficiently browse, select, and reserve private jets
 
-### `npm run build`
+## 🛠 Built With <a name="built-with"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Tech Stack <a name="tech-stack"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  <ul>
+    <li><a href="https://reactjs.org/">React</a></li>
+  </ul>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  <ul>
+    <li><a href="https://redux-toolkit.js.org/">Redux ToolKit</a></li>
+  </ul>
 
-### `npm run eject`
+  <ul>
+    <li><a href="https://reactrouter.com/">React Router</a></li>
+  </ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  <ul>
+    <li><a href="https://testing-library.com/docs/react-testing-library/intro/">react Testing Library</a></li>
+  </ul>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ <ul>
+    <li><a href="https://babeljs.io/">Babel</a></li>
+  </ul>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!--
+<summary>Rubocop</summary>
+  <ul>
+    <li><a href="https://github.com/rubocop/rubocop-rails">Rubocop</a></li>
+  </ul>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<summary>Selenium Web driver</summary>
+  <ul>
+    <li><a href="https://rubygems.org/gems/selenium-webdriver/versions/4.4.0">Selenium Web driver</a></li>
+  </ul> -->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- Features -->
 
-### Code Splitting
+### Key Features <a name="key-features"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+> Make Private Jet Reservations
 
-### Analyzing the Bundle Size
+> View, modify, and cancel reservations.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> Create, edit, and view plane details.
 
-### Making a Progressive Web App
+> Secure user login and profile management.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+> Create, edit, and view plane details for a comprehensive understanding.
 
-### Advanced Configuration
+> Secure user authentication and profile management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment
+<!-- LIVE DEMO -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🚀 Live Demo <a name="live-demo"></a>
 
-### `npm run build` fails to minify
+> Live Demo of this application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Live Demo Link](https://)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Video Presentation Demo <a name="video-presentation"></a>
+
+> Video Presentation of this application:
+
+- [Video Presentation]()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  git clone   https://github.com/rubydevi/jetlogix-frontend.git
+```
+
+### Install
+
+Install this project with:
+
+    ```sh
+    cd my-project
+    npm install or yarn install
+    ```sh
+
+### Usage
+
+To run the project, you will need to execute:
+
+```sh
+   npm start
+```
+
+<!-- ### Run tests
+
+To run tests, run the following command:
+
+
+```sh
+  Rspec spec  or bundle exec rspec spec
+``` -->
+
+<!-- ### Deployment
+
+You can deploy this project using: -->
+
+<!--
+Example:
+
+```sh
+
+```
+ -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 Chongtham Ruby Devi
+
+- GitHub: [@rubydevi](https://github.com/rubydevi)
+- LinkedIn: [@Chongtham Ruby Devi](https://www.linkedin.com/in/chongtham-bhoomika/)
+
+👤 Yonas Henok
+
+- GitHub: [@YonasHenok](https://github.com/rubydevi)
+- Twitter: [@YonasHenok3](https://twitter.com/rileycodez)
+- LinkedIn: [@Yonas Henok](https://www.linkedin.com/in/chongtham-bhoomika/)
+
+👤 Riley Manda
+
+- GitHub: [@RileyManda](https://github.com/RileyManda)
+- Twitter: [@rilecodez](https://twitter.com/rileycodez)
+- LinkedIn: [rileymanda](https://www.linkedin.com/in/rileymanda/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Video Presentation demo of the project
+
+> Deploy the application on render
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/rubydevi/jetlogix-frontend/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+<!-- SUPPORT -->
+
+## <b>Show your support 🌟</b><a name="support"></a>
+
+Thank you for taking the time to explore this project! Your support means a lot to me. If you find my project valuable and would like to contribute, here is one way you can support me:
+
+- <b>Star the project ⭐️</b>: Show your appreciation by starring this GitHub repository. It helps increase visibility and lets others know that the project is well-received.
+
+- <b>Fork the project 🍴 🎣</b>: If you're interested in making improvements or adding new features, feel free to fork the project. You can work on your own version and even submit pull requests to suggest changes.
+
+- <b>Share with others 🗺️</b>: Spread the word about this project. Share it on social media, mention it in relevant forums or communities, or recommend it to colleagues and friends who might find it useful.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to express my sincere gratitude to [Microverse](https://github.com/microverseinc), the dedicated reviewers, and collaborators. Your unwavering support, feedback, and collaborative efforts have played an immense role in making this journey a resounding success. I am truly grateful for your contributions and for being an integral part of my achievements. Thank you for your continued support.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ <a name="faq"></a>
+
+- **Question_1**
+
+  Do I have to use the vs code specifically?
+
+  - Answer_1
+
+    You can use any one of your favortite or prefered editors<br>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ATTRIBUTION -->
+ <!-- ## 👥 Attribution <a name="attribution"></a>
+- ProjectIcon: [Svgrepo](https://www.svgrepo.com/) -->
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
