@@ -74,7 +74,7 @@ function Login() {
   };
 
   return (
-    <section className="login">
+    <section>
       <p
         ref={errRef}
         className={errMsg ? 'errMsg' : 'offscreen'}

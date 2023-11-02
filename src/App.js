@@ -11,6 +11,7 @@ import Reserve from './components/Reserve';
 import AddAeroplane from './components/AddAeroplane';
 import DeleteAeroplane from './components/DeleteAeroplane';
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -22,60 +23,69 @@ function App() {
             <Routes>
               <Route
                 path="/login"
-                element={(
+                element={
                   <CenterContainer>
                     <Login />
                   </CenterContainer>
-                )}
+                }
               />
+              <Route
+                path="/register"
+                element={
+                  <CenterContainer>
+                    <Register />
+                  </CenterContainer>
+                }
+              />
+
               <Route
                 exact
                 path="/"
-                element={(
+                element={
                   <CenterContainer>
                     <Home />
                   </CenterContainer>
-                )}
+                }
               />
               <Route
                 path="/reservations"
-                element={(
+                element={
                   <CenterContainer>
                     <Reservations />
                   </CenterContainer>
-                )}
+                }
               />
               <Route
                 path="/reserve"
-                element={(
+                element={
                   <CenterContainer>
                     <Reserve />
                   </CenterContainer>
-                )}
+                }
               />
               <Route
                 path="/aeroplanes"
-                element={(
+                element={
                   <CenterContainer>
                     <Aeroplanes />
                   </CenterContainer>
-                )}
+                }
               />
               <Route
                 path="/add_aeroplane"
-                element={(
+                element={
                   <CenterContainer>
                     <AddAeroplane />
                   </CenterContainer>
-                )}
+                }
               />
               <Route
                 path="/delete_aeroplane"
-                element={(
+                element={
                   <CenterContainer>
                     <DeleteAeroplane />
                   </CenterContainer>
-                )}
+                }
               />
             </Routes>
           </main>
