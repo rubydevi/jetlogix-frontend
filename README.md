@@ -133,10 +133,10 @@ Clone this repository to your desired folder:
 
 Install this project with:
 
-    ```sh
+```sh
     cd my-project
     npm install or yarn install
-    ```sh
+```
 
 ### Usage
 
