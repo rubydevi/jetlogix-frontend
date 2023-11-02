@@ -3,14 +3,17 @@ import React, { useState } from 'react';
 const AddAeroplane = () => {
   const [aeroplane, setAeroplane] = useState({
     name: '',
+    model: '',
     image: '',
+    description: '',
+    number_of_seats: '',
     fee: 0,
-    pilotLicense: '',
-    manufacturer: '',
+    reserved: false,
   });
 
   const {
-    name, image, fee, pilotLicense, manufacturer,
+    // eslint-disable-next-line camelcase
+    name, model, image, description, number_of_seats, fee,
   } = aeroplane;
 
   const handleChange = (e) => {
@@ -37,10 +40,39 @@ const AddAeroplane = () => {
         </div>
         <div className="mb-3 col-6">
           <input
-            type="file"
+            type="text"
+            id="model"
+            className="form-control"
+            placeholder="Model"
+            value={model}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3 col-6">
+          <input
+            type="text"
             className="form-control"
             id="image"
             value={image}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3 col-6">
+          <input
+            type="text"
+            className="form-control"
+            id="description"
+            value={description}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3 col-6">
+          <input
+            type="text"
+            className="form-control"
+            id="number_of_sits"
+            // eslint-disable-next-line camelcase
+            value={number_of_seats}
             onChange={handleChange}
           />
         </div>
@@ -51,26 +83,6 @@ const AddAeroplane = () => {
             id="fee"
             placeholder="Enter the fee"
             value={fee}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3 col-6">
-          <input
-            type="text"
-            className="form-control"
-            id="pilotLicense"
-            placeholder="Pilot's License"
-            value={pilotLicense}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3 col-6">
-          <input
-            type="text"
-            className="form-control"
-            id="manufacturer"
-            placeholder="Manufacturer"
-            value={manufacturer}
             onChange={handleChange}
           />
         </div>
