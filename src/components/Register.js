@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
@@ -14,6 +14,7 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/signup';
 
 function Register() {
+  const navigate = useNavigate();
   // To focus on the input form
   const userRef = useRef();
   const errRef = useRef();
@@ -50,27 +51,21 @@ function Register() {
   // checking user name validation
   useEffect(() => {
     const result = USER_REGEX.test(user);
-    // TODO: remove once done
-    console.log(result);
-    console.log(user);
+
     setValidName(result);
   }, [user]);
 
   // checking user Email validation
   useEffect(() => {
     const result = EMAIL_REGEX.test(email);
-    // TODO: remove once done
-    console.log(result);
-    console.log(email);
+
     setValidEmail(result);
   }, [email]);
 
   // checking password validation
   useEffect(() => {
     const result = PWD_REGEX.test(pwd);
-    // TODO: remove once done
-    console.log(result);
-    console.log(pwd);
+
     setValidPwd(result);
     const matcher = pwd === matchPwd;
     setValidMatchPwd(matcher);
@@ -104,16 +99,16 @@ function Register() {
       },
     };
     try {
-      const res = await axios.post(REGISTER_URL, JSON.stringify(formData), {
+      axios.post(REGISTER_URL, JSON.stringify(formData), {
         headers: { 'Content-Type': 'application/json' },
         Accept: '*/*',
       });
-      console.log(res);
       // clean up the form
       setEmail('');
       setUser('');
       setPwd('');
       setMatchPwd('');
+      navigate('/login');
       setSuccess(true);
     } catch (err) {
       if (!err?.response) {

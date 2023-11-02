@@ -23,7 +23,7 @@ function App() {
           <main className="col">
             <Routes>
               <Route
-                path="login"
+                path="/login"
                 element={(
                   <CenterContainer>
                     <Login />
@@ -31,7 +31,7 @@ function App() {
                 )}
               />
               <Route
-                path="register"
+                path="/register"
                 element={(
                   <CenterContainer>
                     <Register />
