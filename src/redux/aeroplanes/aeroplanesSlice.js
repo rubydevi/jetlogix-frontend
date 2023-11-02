@@ -6,7 +6,6 @@ const url = 'http://localhost:3000/api/v1/users/1/aeroplanes';
 export const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', async () => {
   try {
     const response = await axios.get(url);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     throw Error(error);
@@ -14,12 +13,12 @@ export const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', as
 });
 
 const initialState = {
-  aeroplanes: {},
+  aeroplanes: [],
   loading: false,
   error: null,
 };
 
-const aeroplanesSplice = createSlice({
+const aeroplanesSlice = createSlice({
   name: 'aeroplanes',
   initialState,
   reducers: {},
@@ -42,4 +41,4 @@ const aeroplanesSplice = createSlice({
   },
 });
 
-export default aeroplanesSplice.reducer;
+export default aeroplanesSlice.reducer;
