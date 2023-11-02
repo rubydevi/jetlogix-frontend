@@ -91,13 +91,14 @@ function Login() {
           ref={userRef}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          autoComplete="off"
+          autoComplete="on"
           required
         />
         <label htmlFor="password">Password:</label>
         <input
           type="password"
           id="password"
+          autoComplete="on"
           value={pwd}
           onChange={(e) => setPwd(e.target.value)}
           required
