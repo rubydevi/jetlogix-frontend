@@ -10,6 +10,7 @@ import './App.css';
 import Reserve from './components/Reserve';
 import AddAeroplane from './components/AddAeroplane';
 import DeleteAeroplane from './components/DeleteAeroplane';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -19,6 +20,14 @@ function App() {
           <Navigation />
           <main className="col">
             <Routes>
+              <Route
+                path="/login"
+                element={(
+                  <CenterContainer>
+                    <Login />
+                  </CenterContainer>
+                )}
+              />
               <Route
                 exact
                 path="/"
