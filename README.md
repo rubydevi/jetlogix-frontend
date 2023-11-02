@@ -63,21 +63,6 @@ JetLogix's front end is a React application that fetches and displays informatio
     <li><a href="https://babeljs.io/">Babel</a></li>
   </ul>
 
-<!--
-<summary>Rubocop</summary>
-  <ul>
-    <li><a href="https://github.com/rubocop/rubocop-rails">Rubocop</a></li>
-  </ul>
-
-
-
-<summary>Selenium Web driver</summary>
-  <ul>
-    <li><a href="https://rubygems.org/gems/selenium-webdriver/versions/4.4.0">Selenium Web driver</a></li>
-  </ul> -->
-
-<!-- Features -->
-
 ### Key Features <a name="key-features"></a>
 
 > Make Private Jet Reservations
@@ -126,7 +111,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone   https://github.com/rubydevi/jetlogix-frontend.git
+ git clone https://github.com/rubydevi/ jetlogix-frontend.git
 ```
 
 ### Install
@@ -134,8 +119,8 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-    cd my-project
-    npm install or yarn install
+  cd my-project
+  npm install or yarn install
 ```
 
 ### Usage
