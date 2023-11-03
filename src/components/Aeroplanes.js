@@ -4,7 +4,6 @@ import AuthContext from '../context/AuthProvider';
 import fetchAeroplanes from '../redux/aeroplanes/aeroplanesActions';
 import AeroplaneItem from './AeroplaneItem';
 
-
 const Aeroplane = () => {
   const dispatch = useDispatch();
   const aeroplanesData = useSelector((state) => state.aeroplanes.aeroplanes);
@@ -25,7 +24,6 @@ const Aeroplane = () => {
         </div>
       </div>
     );
-
   }
 
   if (error) {
