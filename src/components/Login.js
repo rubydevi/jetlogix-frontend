@@ -46,6 +46,7 @@ function Login() {
       const authToken = res.headers.authorization;
       const { role } = res.data.data;
       const username = res.data.data.name;
+
       const { email, id } = res.data.data;
       // console.log(authToken);
       setAuth({
@@ -92,7 +93,7 @@ function Login() {
           ref={userRef}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          autoComplete="off"
+          autoComplete="on"
           required
         />
         <label htmlFor="password">Password:</label>
@@ -101,6 +102,7 @@ function Login() {
           id="password"
           value={pwd}
           onChange={(e) => setPwd(e.target.value)}
+          autoComplete="on"
           required
         />
         <button type="submit" className="btn btn-primary">

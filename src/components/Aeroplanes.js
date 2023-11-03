@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AuthContext from '../context/AuthProvider';
-import fetchAeroplanes from '../redux/aeroplanes/aeroplanesActions';
+import { fetchAeroplanes } from '../redux/aeroplanes/aeroplanesActions';
 import AeroplaneItem from './AeroplaneItem';
 
 const Aeroplane = () => {
@@ -9,6 +9,7 @@ const Aeroplane = () => {
   const aeroplanesData = useSelector((state) => state.aeroplanes.aeroplanes);
   const loading = useSelector((state) => state.aeroplanes.loading);
   const error = useSelector((state) => state.aeroplanes.error);
+
   const { id } = useContext(AuthContext);
 
   useEffect(() => {
@@ -42,7 +43,9 @@ const Aeroplane = () => {
         {aeroplanesData.aeroplanes && aeroplanesData.aeroplanes.length > 0 ? (
           <ul className="list-unstyled d-flex flex-wrap">
             {aeroplanesData.aeroplanes.map((aeroplane) => (
+
               <AeroplaneItem key={aeroplane.id} aeroplane={aeroplane} />
+
             ))}
           </ul>
         ) : (

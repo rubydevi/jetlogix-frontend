@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider';
 import './index.css';
+
 import store from './redux/store';
 import App from './App';
 
