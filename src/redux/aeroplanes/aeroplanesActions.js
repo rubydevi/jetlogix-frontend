@@ -12,4 +12,13 @@ const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', async () 
   }
 });
 
+export const createAeroplane = createAsyncThunk('aeroplanes/createAeroplane', async (aeroplane) => {
+  try {
+    const response = await axios.post('http://localhost:3000/api/v1/aeroplanes', { aeroplane });
+    return response.data;
+  } catch (error) {
+    throw Error(error);
+  }
+});
+
 export default fetchAeroplanes;

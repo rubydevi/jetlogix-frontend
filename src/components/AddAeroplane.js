@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createAeroplane } from '../redux/aeroplanes/aeroplanesActions';
 
 const AddAeroplane = () => {
   const [aeroplane, setAeroplane] = useState({
@@ -11,10 +13,7 @@ const AddAeroplane = () => {
     reserved: false,
   });
 
-  const {
-    // eslint-disable-next-line camelcase
-    name, model, image, description, number_of_seats, fee,
-  } = aeroplane;
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setAeroplane({ ...aeroplane, [e.target.id]: e.target.value });
@@ -22,7 +21,8 @@ const AddAeroplane = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(aeroplane);
+
+    dispatch(createAeroplane(aeroplane));
   };
 
   return (
@@ -34,7 +34,7 @@ const AddAeroplane = () => {
             id="name"
             className="form-control"
             placeholder="Name"
-            value={name}
+            value={aeroplane.name}
             onChange={handleChange}
           />
         </div>
@@ -44,7 +44,7 @@ const AddAeroplane = () => {
             id="model"
             className="form-control"
             placeholder="Model"
-            value={model}
+            value={aeroplane.model}
             onChange={handleChange}
           />
         </div>
@@ -52,8 +52,9 @@ const AddAeroplane = () => {
           <input
             type="text"
             className="form-control"
+            placeholder="Image URL"
             id="image"
-            value={image}
+            value={aeroplane.image}
             onChange={handleChange}
           />
         </div>
@@ -61,18 +62,19 @@ const AddAeroplane = () => {
           <input
             type="text"
             className="form-control"
+            placeholder="Description"
             id="description"
-            value={description}
+            value={aeroplane.description}
             onChange={handleChange}
           />
         </div>
         <div className="mb-3 col-6">
           <input
-            type="text"
+            type="number"
             className="form-control"
-            id="number_of_sits"
-            // eslint-disable-next-line camelcase
-            value={number_of_seats}
+            id="number_of_seats"
+            placeholder="Number of seats"
+            value={aeroplane.number_of_seats}
             onChange={handleChange}
           />
         </div>
@@ -82,7 +84,7 @@ const AddAeroplane = () => {
             className="form-control"
             id="fee"
             placeholder="Enter the fee"
-            value={fee}
+            value={aeroplane.fee}
             onChange={handleChange}
           />
         </div>
