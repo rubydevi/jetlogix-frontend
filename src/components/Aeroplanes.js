@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import AuthContext from '../context/AuthProvider';
 import fetchAeroplanes from '../redux/aeroplanes/aeroplanesActions';
 import AeroplaneItem from './AeroplaneItem';
 
@@ -8,10 +9,11 @@ const Aeroplane = () => {
   const aeroplanesData = useSelector((state) => state.aeroplanes.aeroplanes);
   const loading = useSelector((state) => state.aeroplanes.loading);
   const error = useSelector((state) => state.aeroplanes.error);
+  const { id } = useContext(AuthContext);
 
   useEffect(() => {
-    dispatch(fetchAeroplanes());
-  }, [dispatch]);
+    dispatch(fetchAeroplanes(id));
+  }, [dispatch, id]);
 
   if (loading) {
     return (
