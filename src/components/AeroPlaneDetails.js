@@ -31,16 +31,16 @@ function AeroPlaneDetails() {
               <span>$45</span>
             </li>
             <li className="list-group-item group-item d-flex justify-content-between gap-5">
-              A third item
+              Number of seats
               <span>5</span>
             </li>
             <li className="list-group-item group-item d-flex justify-content-between gap-5">
-              A fourth item
+              Total payment
               <span>$45</span>
             </li>
             <li className="list-group-item group-item d-flex justify-content-between gap-5">
-              And a fifth one
-              <span>second item</span>
+              Departure
+              <span>location</span>
             </li>
             <li className="list-group-item border-0 mt-3">
               <p>5.9% APR Representative</p>
