@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'http://localhost:3000/api/v1/users/7/aeroplanes';
+const url = 'http://localhost:3000/api/v1/users/1/aeroplanes';
+const baseUrl = 'http://localhost:4000/aeroplanes';
 
 export const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', async () => {
   try {
@@ -12,17 +13,20 @@ export const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', as
   }
 });
 
-export const createAeroplane = createAsyncThunk('aeroplanes/createAeroplane', async (aeroplaneData, { getState }) => {
+export const createAeroplane = createAsyncThunk('aeroplanes/createAeroplane', async (aeroplaneData) => {
   try {
-    const { user } = getState();
-    const aeroplanesUrl = `${url}/${user.id}/aeroplanes`;
+    // const aeroplanesUrl = `${baseUrl}/${auth.userId}/aeroplanes`;
+    console.log(JSON.parse(localStorage.getItem('Token')));
     const config = {
       headers: {
-        Authorization: `Bearer ${user.jti}`,
+        authorization: JSON.parse(localStorage.getItem('Token')),
         'Content-Type': 'application/json',
       },
     };
-    const response = await axios.post(aeroplanesUrl, aeroplaneData, config);
+    const response = await axios.post(baseUrl, JSON.stringify({
+      aeroplane:
+      aeroplaneData,
+    }), config);
     return response.data;
   } catch (error) {
     throw Error(error);

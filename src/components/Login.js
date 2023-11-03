@@ -47,12 +47,15 @@ function Login() {
       const { role } = res.data.data;
       const username = res.data.data.name;
       const { email } = res.data.data;
+      const userId = res.data.data.id;
+      window.localStorage.setItem('Token', JSON.stringify(authToken));
       // console.log(authToken);
       setAuth({
         role,
         authToken,
         email,
         username,
+        userId,
       });
       // clean the input filed
       setEmail('');
@@ -91,7 +94,7 @@ function Login() {
           ref={userRef}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          autoComplete="off"
+          autoComplete="on"
           required
         />
         <label htmlFor="password">Password:</label>
@@ -100,6 +103,7 @@ function Login() {
           id="password"
           value={pwd}
           onChange={(e) => setPwd(e.target.value)}
+          autoComplete="on"
           required
         />
         <button type="submit" className="btn btn-primary">
