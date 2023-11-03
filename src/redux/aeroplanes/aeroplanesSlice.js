@@ -16,6 +16,7 @@ const aeroplanesSlice = createSlice({
       .addCase(fetchAeroplanes.pending, (state) => ({
         ...state,
         loading: true,
+
       }))
       .addCase(fetchAeroplanes.fulfilled, (state, action) => ({
         ...state,
