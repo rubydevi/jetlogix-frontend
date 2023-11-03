@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAeroplanes } from '../redux/aeroplanes/aeroplanesActions';
+import AuthContext from '../context/AuthProvider';
+import fetchAeroplanes from '../redux/aeroplanes/aeroplanesActions';
+import AeroplaneItem from './AeroplaneItem';
+
 
 const Aeroplane = () => {
   const dispatch = useDispatch();
@@ -8,17 +11,26 @@ const Aeroplane = () => {
   const loading = useSelector((state) => state.aeroplanes.loading);
   const error = useSelector((state) => state.aeroplanes.error);
 
+  const { id } = useContext(AuthContext);
+
   useEffect(() => {
-    dispatch(fetchAeroplanes());
-  }, [dispatch]);
+    dispatch(fetchAeroplanes(id));
+  }, [dispatch, id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+
   }
 
   if (error) {
     return (
-      <div>
+      <div className="d-flex justify-content-center align-items-center vh-100">
         Error:
         {error}
       </div>
@@ -33,15 +45,9 @@ const Aeroplane = () => {
         {aeroplanesData.aeroplanes && aeroplanesData.aeroplanes.length > 0 ? (
           <ul className="list-unstyled d-flex flex-wrap">
             {aeroplanesData.aeroplanes.map((aeroplane) => (
-              <li key={aeroplane.id} className="card m-2" style={{ width: '18rem' }}>
-                <div className="card-body">
-                  <img src={aeroplane.image} alt={aeroplane.name} className="card-img-top" />
-                  <h6 className="card-title fw-bold text-uppercase">{aeroplane.name}</h6>
-                  <p className="card-text">
-                    {aeroplane.description}
-                  </p>
-                </div>
-              </li>
+
+              <AeroplaneItem key={aeroplane.id} aeroplane={aeroplane} />
+
             ))}
           </ul>
         ) : (

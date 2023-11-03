@@ -1,10 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'http://localhost:3000/api/v1/users/1/aeroplanes';
 const baseUrl = 'http://localhost:4000/aeroplanes';
 
-export const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', async () => {
+
+
+export const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', async (userId) => {
+  const url = `http://localhost:4000/api/v1/users/${userId}/aeroplanes`;
   try {
     const response = await axios.get(url);
     return response.data;
@@ -12,6 +14,7 @@ export const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', as
     throw Error(error);
   }
 });
+
 
 export const createAeroplane = createAsyncThunk('aeroplanes/createAeroplane', async (aeroplaneData) => {
   try {
@@ -30,3 +33,4 @@ export const createAeroplane = createAsyncThunk('aeroplanes/createAeroplane', as
     throw Error(error);
   }
 });
+

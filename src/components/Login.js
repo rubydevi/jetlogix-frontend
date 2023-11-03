@@ -46,16 +46,15 @@ function Login() {
       const authToken = res.headers.authorization;
       const { role } = res.data.data;
       const username = res.data.data.name;
-      const { email } = res.data.data;
-      const userId = res.data.data.id;
-      window.localStorage.setItem('Token', JSON.stringify(authToken));
+
+      const { email, id } = res.data.data;
       // console.log(authToken);
       setAuth({
         role,
         authToken,
         email,
         username,
-        userId,
+        id,
       });
       // clean the input filed
       setEmail('');
