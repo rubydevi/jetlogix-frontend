@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import plane from '../assets/aeroplane.jpg';
 
 function AeroPlaneDetails() {
   const { jetShow } = useSelector((state) => state.aeroplanes);
-  console.log(jetShow);
+  const navigate = useNavigate();
   return (
     <div className="position-absolute w-100   page top-0 start-0 d-flex justify-content-center align-items-center ">
       <div className="container  style-card gap-5  justify-content-center align-items-start   row">
@@ -52,6 +53,7 @@ function AeroPlaneDetails() {
             <button
               type="button"
               className="btn  btn-primary rounded-5 px-4 py-2 "
+              onClick={() => navigate('/reserve')}
             >
               <span className="me-3">
                 {jetShow.reserved ? 'Not Available' : 'Reserve'}

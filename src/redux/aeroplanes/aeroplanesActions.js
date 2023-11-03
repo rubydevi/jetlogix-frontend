@@ -17,7 +17,6 @@ export const fetchAeroplanes = createAsyncThunk(
 export const createAeroplane = createAsyncThunk(
   'aeroplanes/createAeroplane',
   async (data) => {
-    console.log(data);
     try {
       const config = {
         headers: {
@@ -44,7 +43,6 @@ export const createAeroplane = createAsyncThunk(
 export const showAeroplane = createAsyncThunk(
   'aeroplanes/showAeroplane',
   async (data) => {
-    console.log(data);
     const url = `http://localhost:4000/api/v1/users/${data.userId}/aeroplanes/${data.aeroplaneId}`;
     try {
       const response = await axios.get(url, {
