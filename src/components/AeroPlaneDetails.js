@@ -10,7 +10,7 @@ function AeroPlaneDetails() {
         <div className="col">
           <img
             src={plane}
-            className="img-fluid  w-100 imghight mt-5 rounded-start"
+            className="img-fluid  w-100 imghight mt-5 rounded-1"
             alt=""
           />
         </div>
@@ -24,12 +24,24 @@ function AeroPlaneDetails() {
             </li>
             <li className="list-group-item group-item d-flex justify-content-between gap-5">
               An item
-              <span>A second item</span>
+              <span>$45</span>
             </li>
-            <li className="list-group-item group-item">A second item</li>
-            <li className="list-group-item group-item">A third item</li>
-            <li className="list-group-item group-item">A fourth item</li>
-            <li className="list-group-item group-item">And a fifth one</li>
+            <li className="list-group-item group-item d-flex justify-content-between gap-5">
+              A second item
+              <span>$45</span>
+            </li>
+            <li className="list-group-item group-item d-flex justify-content-between gap-5">
+              A third item
+              <span>5</span>
+            </li>
+            <li className="list-group-item group-item d-flex justify-content-between gap-5">
+              A fourth item
+              <span>$45</span>
+            </li>
+            <li className="list-group-item group-item d-flex justify-content-between gap-5">
+              And a fifth one
+              <span>second item</span>
+            </li>
             <li className="list-group-item border-0 mt-3">
               <p>5.9% APR Representative</p>
             </li>
