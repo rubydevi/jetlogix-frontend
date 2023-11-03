@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import fetchAeroplanes from '../redux/aeroplanes/aeroplanesActions';
+import { fetchAeroplanes } from '../redux/aeroplanes/aeroplanesActions';
 
 const Aeroplane = () => {
   const dispatch = useDispatch();

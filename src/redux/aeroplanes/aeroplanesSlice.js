@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import fetchAeroplanes from './aeroplanesActions';
+import { fetchAeroplanes, createAeroplane } from './aeroplanesActions';
 
 const initialState = {
   aeroplanes: [],
@@ -10,7 +10,11 @@ const initialState = {
 const aeroplanesSlice = createSlice({
   name: 'aeroplanes',
   initialState,
-  reducers: {},
+  reducers: {
+    aeroplaneCreated: (state, action) => {
+      state.aeroplanes.push(action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAeroplanes.pending, (state) => ({
@@ -27,7 +31,11 @@ const aeroplanesSlice = createSlice({
         ...state,
         loading: false,
         error: action.error.message,
-      }));
+      }))
+      .addCase(createAeroplane.fulfilled, (state, action) => {
+        state.loading = false;
+        aeroplanesSlice.caseReducers.aeroplaneCreated(state, action);
+      });
   },
 });
 

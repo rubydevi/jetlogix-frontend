@@ -22,7 +22,21 @@ const AddAeroplane = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createAeroplane(aeroplane));
+    dispatch(createAeroplane(aeroplane))
+      .then(() => {
+        setAeroplane({
+          name: '',
+          model: '',
+          image: '',
+          description: '',
+          number_of_seats: '',
+          fee: 0,
+          reserved: false,
+        });
+      })
+      .catch((error) => {
+        console.error('Error creating aeroplane:', error);
+      });
   };
 
   return (

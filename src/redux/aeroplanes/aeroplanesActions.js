@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'http://localhost:3000/api/v1/users/1/aeroplanes';
+const url = 'http://localhost:3000/api/v1/users/7/aeroplanes';
 
-const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', async () => {
+export const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', async () => {
   try {
     const response = await axios.get(url);
     return response.data;
@@ -12,13 +12,19 @@ const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', async () 
   }
 });
 
-export const createAeroplane = createAsyncThunk('aeroplanes/createAeroplane', async (aeroplane) => {
+export const createAeroplane = createAsyncThunk('aeroplanes/createAeroplane', async (aeroplaneData, { getState }) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/aeroplanes', { aeroplane });
+    const { user } = getState();
+    const aeroplanesUrl = `${url}/${user.id}/aeroplanes`;
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user.jti}`,
+        'Content-Type': 'application/json',
+      },
+    };
+    const response = await axios.post(aeroplanesUrl, aeroplaneData, config);
     return response.data;
   } catch (error) {
     throw Error(error);
   }
 });
-
-export default fetchAeroplanes;
