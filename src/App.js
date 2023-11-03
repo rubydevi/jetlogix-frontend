@@ -10,6 +10,9 @@ import './App.css';
 import Reserve from './components/Reserve';
 import AddAeroplane from './components/AddAeroplane';
 import DeleteAeroplane from './components/DeleteAeroplane';
+import Login from './components/Login';
+import Register from './components/Register';
+import RequireAuth from './components/RequireAuth';
 
 function App() {
   return (
@@ -20,30 +23,72 @@ function App() {
           <main className="col">
             <Routes>
               <Route
-                exact
-                path="/"
-                element={<CenterContainer><Home /></CenterContainer>}
+                path="/login"
+                element={(
+                  <CenterContainer>
+                    <Login />
+                  </CenterContainer>
+                )}
               />
               <Route
-                path="/reservations"
-                element={<CenterContainer><Reservations /></CenterContainer>}
+                path="/register"
+                element={(
+                  <CenterContainer>
+                    <Register />
+                  </CenterContainer>
+                )}
               />
-              <Route
-                path="/reserve"
-                element={<CenterContainer><Reserve /></CenterContainer>}
-              />
-              <Route
-                path="/aeroplanes"
-                element={<CenterContainer><Aeroplanes /></CenterContainer>}
-              />
-              <Route
-                path="/add_aeroplane"
-                element={<CenterContainer><AddAeroplane /></CenterContainer>}
-              />
-              <Route
-                path="/delete_aeroplane"
-                element={<CenterContainer><DeleteAeroplane /></CenterContainer>}
-              />
+              <Route element={<RequireAuth />}>
+                <Route
+                  exact
+                  path="/"
+                  element={(
+                    <CenterContainer>
+                      <Home />
+                    </CenterContainer>
+                  )}
+                />
+                <Route
+                  path="/reservations"
+                  element={(
+                    <CenterContainer>
+                      <Reservations />
+                    </CenterContainer>
+                  )}
+                />
+                <Route
+                  path="/reserve"
+                  element={(
+                    <CenterContainer>
+                      <Reserve />
+                    </CenterContainer>
+                  )}
+                />
+                <Route
+                  path="/aeroplanes"
+                  element={(
+                    <CenterContainer>
+                      <Aeroplanes />
+                    </CenterContainer>
+                  )}
+                />
+                <Route
+                  path="/add_aeroplane"
+                  element={(
+                    <CenterContainer>
+                      <AddAeroplane />
+                    </CenterContainer>
+                  )}
+                />
+                <Route
+                  path="/delete_aeroplane"
+                  element={(
+                    <CenterContainer>
+                      <DeleteAeroplane />
+                    </CenterContainer>
+                  )}
+                />
+              </Route>
             </Routes>
           </main>
         </div>

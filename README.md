@@ -246,4 +246,3 @@ I would like to express my sincere gratitude to [Microverse](https://github.com/
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
