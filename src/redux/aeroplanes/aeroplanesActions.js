@@ -15,8 +15,6 @@ export const fetchAeroplanes = createAsyncThunk('aeroplanes/fetchAeroplanes', as
 
 export const createAeroplane = createAsyncThunk('aeroplanes/createAeroplane', async (aeroplaneData) => {
   try {
-    // const aeroplanesUrl = `${baseUrl}/${auth.userId}/aeroplanes`;
-    console.log(JSON.parse(localStorage.getItem('Token')));
     const config = {
       headers: {
         authorization: JSON.parse(localStorage.getItem('Token')),

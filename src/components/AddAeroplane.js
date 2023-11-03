@@ -12,16 +12,12 @@ const AddAeroplane = () => {
     image: '',
     description: '',
     number_of_seats: '',
+    location: '',
     fee: 0,
     reserved: false,
   });
 
   const dispatch = useDispatch();
-
-  // const handleChange = (e) => {
-  //   setAeroplane({ ...aeroplane, [e.target.id]: e.target.value });
-  // };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(auth);
@@ -98,6 +94,19 @@ const AddAeroplane = () => {
         </div>
         <div className="mb-3 col-6">
           <input
+            type="text"
+            className="form-control"
+            id="location"
+            placeholder="Location"
+            value={aeroplane.location}
+            onChange={(e) => setAeroplane({
+              ...aeroplane,
+              location: e.target.value,
+            })}
+          />
+        </div>
+        <div className="mb-3 col-6">
+          <input
             type="number"
             className="form-control"
             id="fee"
@@ -105,7 +114,7 @@ const AddAeroplane = () => {
             value={aeroplane.fee}
             onChange={(e) => setAeroplane({
               ...aeroplane,
-              fee: e.target.value,
+              fee: +e.target.value,
             })}
           />
         </div>
