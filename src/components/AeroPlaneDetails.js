@@ -1,9 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import plane from '../assets/aeroplane.jpg';
 
 function AeroPlaneDetails() {
+  const { jetShow } = useSelector((state) => state.aeroplanes);
+  console.log(jetShow);
   return (
     <div className="position-absolute w-100   page top-0 start-0 d-flex justify-content-center align-items-center ">
       <div className="container  style-card gap-5  justify-content-center align-items-start   row">
