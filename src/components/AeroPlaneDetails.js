@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import plane from '../assets/aeroplane.jpg';
+// import plane from '../assets/aeroplane.jpg';
 
 function AeroPlaneDetails() {
   const { jetShow } = useSelector((state) => state.aeroplanes);
@@ -12,38 +12,37 @@ function AeroPlaneDetails() {
       <div className="container  style-card gap-5  justify-content-center align-items-start   row">
         <div className="col">
           <img
-            src={plane}
+            src={jetShow.image}
             className="img-fluid  w-100 imghight mt-5 rounded-1"
             alt=""
           />
         </div>
         <div className="col col-lg-4">
           <ul className="list-group w-100 h-100">
-            <li className="list-group-item border-0">
-              <h3 className="info-section">Example usage </h3>
+            <li className="list-group-item  d-flex justify-content-end border-0">
+              <h3 className="info-section">{jetShow.name}</h3>
             </li>
             <li className="list-group-item border-0">
-              <p className="text-right">d Columns and gutters Grid tiers</p>
+              <p className="text-right">{jetShow.description}</p>
             </li>
             <li className="list-group-item group-item d-flex justify-content-between gap-5">
-              An item
-              <span>$45</span>
-            </li>
-            <li className="list-group-item group-item d-flex justify-content-between gap-5">
-              A second item
-              <span>$45</span>
+              Jet Model
+              <span>{jetShow.model}</span>
             </li>
             <li className="list-group-item group-item d-flex justify-content-between gap-5">
               Number of seats
-              <span>5</span>
+              <span>{jetShow.number_of_seats}</span>
             </li>
             <li className="list-group-item group-item d-flex justify-content-between gap-5">
               Total payment
-              <span>$45</span>
+              <span>
+                $
+                {jetShow.fee}
+              </span>
             </li>
             <li className="list-group-item group-item d-flex justify-content-between gap-5">
               Departure
-              <span>location</span>
+              <span>{jetShow.location}</span>
             </li>
             <li className="list-group-item border-0 mt-3">
               <p>5.9% APR Representative</p>
@@ -54,7 +53,9 @@ function AeroPlaneDetails() {
               type="button"
               className="btn  btn-primary rounded-5 px-4 py-2 "
             >
-              <span className="me-3">Reserve</span>
+              <span className="me-3">
+                {jetShow.reserved ? 'Not Available' : 'Reserve'}
+              </span>
               <FontAwesomeIcon
                 icon={faArrowCircleRight}
                 style={{ color: '#ffffff' }}
