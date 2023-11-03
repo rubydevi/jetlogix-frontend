@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AuthContext from '../context/AuthProvider';
-import fetchAeroplanes from '../redux/aeroplanes/aeroplanesActions';
+import { fetchAeroplanes } from '../redux/aeroplanes/aeroplanesActions';
 import AeroplaneItem from './AeroplaneItem';
 
 const Aeroplane = () => {
