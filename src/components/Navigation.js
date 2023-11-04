@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useNavigation } from './NavigationContext';
 import logo from '../assets/app-logo.png';
 import NavFooter from './NavFooter';
+import useAuth from '../hooks/useAuth';
 
 const Navigation = () => {
+  const { setAuth } = useAuth();
   const { isOpen } = useNavigation();
+  const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
+
+  const handleLogout = () => {
+    setAuth({});
+    localStorage.removeItem('Token');
+    navigate('/login');
+  };
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -73,6 +82,13 @@ const Navigation = () => {
         >
           Delete Aeroplane
         </NavLink>
+        <button
+          onClick={handleLogout}
+          type="button"
+          className="list-group-item list-group-item-action "
+        >
+          Log Out
+        </button>
         <NavFooter />
       </div>
     </div>
