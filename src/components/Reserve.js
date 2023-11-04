@@ -6,16 +6,15 @@ export default function Reserve() {
   const dispatch = useDispatch();
   const aeroplanesData = useSelector((state) => state.aeroplanes.aeroplanes);
   const { reservedJet } = useSelector((state) => state.aeroplanes);
-
   const userData = JSON.parse(localStorage.getItem('Token')) || {};
+
   const [data, setData] = useState({
     username: '',
     planeName: '',
-    totalCost: '',
     startLocation: '',
     endLocation: '',
-    startDate: '',
-    endDate: '',
+    startTime: '',
+    endTime: '',
     reserveDate: '',
   });
 
@@ -24,10 +23,9 @@ export default function Reserve() {
     const formData = {
       reservation: {
         reserved_date: data.reserveDate,
-        start_time: data.startDate,
-        end_time: data.endDate,
-        total_cost: data.totalCost,
-        start_location: data.startLocation,
+        start_time: data.startTime,
+        end_time: data.endTime,
+        start_location: reservedJet.location,
         destination: data.endLocation,
         user_id: userData.id,
         aeroplane_id: reservedJet.id || data.planeName,
@@ -37,11 +35,10 @@ export default function Reserve() {
     setData({
       username: '',
       planeName: '',
-      totalCost: '',
       startLocation: '',
       endLocation: '',
-      startDate: '',
-      endDate: '',
+      startTime: '',
+      endTime: '',
       reserveDate: '',
     });
   };
@@ -53,17 +50,13 @@ export default function Reserve() {
           <div className="col">
             <div className=" col-8">
               <label htmlFor="username" className="form-label">
-                Username:
+                Username
               </label>
               <input
                 type="text"
                 id="username"
                 className="form-control"
-                value={userData.username}
-                onChange={(e) => setData({
-                  ...data,
-                  username: e.target.value,
-                })}
+                defaultValue={userData.username}
               />
             </div>
             <div className=" col-8">
@@ -80,7 +73,7 @@ export default function Reserve() {
                   planeName: e.target.value,
                 })}
               >
-                <option selected>
+                <option defaultValue>
                   {reservedJet.id ? reservedJet.name : 'Select menu plane'}
                 </option>
                 {aeroplanesData?.aeroplanes?.map((plane) => (
@@ -91,26 +84,13 @@ export default function Reserve() {
               </select>
             </div>
             <div className=" col-8">
-              <label htmlFor="cost" className="form-label">
-                Price Per Person
-              </label>
-              <input
-                value={data.totalCost}
-                onChange={(e) => setData({
-                  ...data,
-                  totalCost: e.target.value,
-                })}
-                type="number"
-                className="form-control"
-                id="cost"
-              />
-            </div>
-            <div className=" col-8">
               <label htmlFor="startLocation" className="form-label">
                 From Departure
               </label>
               <input
-                value={data.startLocation}
+                defaultValue={
+                  reservedJet.id ? reservedJet.location : data.startLocation
+                }
                 onChange={(e) => setData({
                   ...data,
                   startLocation: e.target.value,
@@ -139,30 +119,30 @@ export default function Reserve() {
             </div>
             <div className=" col-8">
               <label htmlFor="start-date" className="form-label">
-                Departure Date select
+                Stat time select
               </label>
               <input
-                value={data.startDate}
+                value={data.startTime}
                 onChange={(e) => setData({
                   ...data,
-                  startDate: e.target.value,
+                  startTime: e.target.value,
                 })}
-                type="date"
+                type="time"
                 className="form-control"
                 id="start-date"
               />
             </div>
             <div className=" col-8">
               <label htmlFor="end-date" className="form-label">
-                Return Date select
+                End time select
               </label>
               <input
-                value={data.endDate}
+                value={data.endTime}
                 onChange={(e) => setData({
                   ...data,
-                  endDate: e.target.value,
+                  endTime: e.target.value,
                 })}
-                type="date"
+                type="time"
                 className="form-control"
                 id="end-date"
               />

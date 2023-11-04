@@ -4,16 +4,31 @@ import { useNavigation } from './NavigationContext';
 import logo from '../assets/app-logo.png';
 import NavFooter from './NavFooter';
 import useAuth from '../hooks/useAuth';
+import axios from '../api/axios';
 
 const Navigation = () => {
   const { setAuth } = useAuth();
   const { isOpen } = useNavigation();
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
+  const { authToken } = JSON.parse(localStorage.getItem('Token')) || {};
 
   const handleLogout = () => {
     setAuth({});
     localStorage.removeItem('Token');
+    const url = '/logout';
+    if (authToken) {
+      try {
+        axios.delete(url, {
+          headers: {
+            Authorization: authToken,
+            'Content-Type': 'application/json',
+          },
+        });
+      } catch (err) {
+        throw Error(err);
+      }
+    }
     navigate('/login');
   };
 
@@ -83,6 +98,7 @@ const Navigation = () => {
           Delete Aeroplane
         </NavLink>
         <button
+          disabled={!authToken}
           onClick={handleLogout}
           type="button"
           className="list-group-item list-group-item-action "
