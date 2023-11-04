@@ -58,7 +58,7 @@ export const showAeroplane = createAsyncThunk(
 );
 
 export const fetchReservedAeroplanes = createAsyncThunk(
-  'aeroplanes/fetchReservedAeroplanes',
+  'reservation/fetchReservedAeroplanes',
   async (userId) => {
     try {
       const response = await axios.get(`http://localhost:4000/api/v1/users/${userId}/reservations`, {
