@@ -10,6 +10,7 @@ const initialState = {
   jetShow: {},
   loading: false,
   showLoading: false,
+  reservedJet: {},
   showError: '',
   error: null,
 };
@@ -21,6 +22,13 @@ const aeroplanesSlice = createSlice({
   reducers: {
     aeroplaneCreated: (state, action) => {
       state.aeroplanes.push(action.payload);
+    },
+    reserveJet(state, action) {
+      const id = action.payload;
+      const reserved = state.aeroplanes.aeroplanes.find(
+        (plane) => plane.id === id,
+      );
+      state.reservedJet = reserved;
     },
   },
 
@@ -57,5 +65,5 @@ const aeroplanesSlice = createSlice({
       });
   },
 });
-
+export const { reserveJet } = aeroplanesSlice.actions;
 export default aeroplanesSlice.reducer;
