@@ -59,3 +59,20 @@ export const showAeroplane = createAsyncThunk(
     }
   },
 );
+
+export const fetchReservedAeroplanes = createAsyncThunk(
+  'aeroplanes/fetchReservedAeroplanes',
+  async (userId) => {
+    try {
+      const response = await axios.get(`http://localhost:4000/api/v1/users/${userId}/reservations`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem('Token'))}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      return response.data;
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+);

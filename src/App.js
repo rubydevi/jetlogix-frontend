@@ -4,7 +4,6 @@ import { Toaster } from 'react-hot-toast';
 import { NavigationProvider } from './components/NavigationContext';
 import Navigation from './components/Navigation';
 import CenterContainer from './components/styledcomponents/CenterContainer';
-import Home from './components/Home';
 import Reservations from './components/Reservations';
 import Aeroplanes from './components/Aeroplanes';
 import './App.css';
@@ -46,7 +45,7 @@ function App() {
                   path="/"
                   element={(
                     <CenterContainer>
-                      <Home />
+                      <Aeroplanes />
                     </CenterContainer>
                   )}
                 />
@@ -74,14 +73,7 @@ function App() {
                     </CenterContainer>
                   )}
                 />
-                <Route
-                  path="/aeroplanes"
-                  element={(
-                    <CenterContainer>
-                      <Aeroplanes />
-                    </CenterContainer>
-                  )}
-                />
+
                 <Route
                   path="/add_aeroplane"
                   element={(
