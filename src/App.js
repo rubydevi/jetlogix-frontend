@@ -41,7 +41,7 @@ function App() {
               <Route element={<RequireAuth />}>
                 <Route
                   exact
-                  path="/"
+                  path="/aeroplanes"
                   element={(
                     <CenterContainer>
                       <Aeroplanes />
