@@ -1,10 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 import axios from '../../api/axios';
+import { fetchReservedAeroplanes } from '../aeroplanes/aeroplanesActions';
 
 const initialState = {
   reservedPlanes: [],
   createdReserve: {},
+  reservation: [],
   loading: false,
   showLoading: false,
   error: null,
@@ -48,6 +50,14 @@ const reservationSlice = createSlice({
       .addCase(createReservation.rejected, (state, action) => {
         state.loading = false;
         state.showError = action.error.message;
+      })
+      .addCase(fetchReservedAeroplanes.pending, (state) => {
+        state.loading = true;
+      })
+
+      .addCase(fetchReservedAeroplanes.fulfilled, (state, action) => {
+        state.loading = false;
+        state.values = action.payload;
       });
   },
 });
