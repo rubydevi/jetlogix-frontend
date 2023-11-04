@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from '../../api/axios';
 
 const initialState = {
   reservedPlanes: [],
@@ -7,8 +8,28 @@ const initialState = {
   showLoading: false,
   error: null,
 };
+
+export const createReservation = createAsyncThunk(
+  'reservation/createReservation',
+  async (data) => {
+    const url = `/api/v1/users/${data.reservation.user_id}/reservations`;
+    try {
+      const { authToken } = JSON.parse(localStorage.getItem('Token'));
+      const response = await axios.post(url, JSON.stringify(data), {
+        headers: {
+          authorization: authToken,
+          'Content-Type': 'application/json',
+        },
+      });
+      return response.data;
+    } catch (err) {
+      throw Error(err);
+    }
+  },
+);
+
 const reservationSlice = createSlice({
-  name: 'aeroplanes',
+  name: 'reservation',
   initialState,
 
   reducers: {},
@@ -19,7 +40,7 @@ const reservationSlice = createSlice({
       })
       .addCase(createReservation.fulfilled, (state, action) => {
         state.loading = false;
-        state.jetShow = action.payload;
+        state.createdReserve = action.payload;
       })
       .addCase(createReservation.rejected, (state, action) => {
         state.loading = false;

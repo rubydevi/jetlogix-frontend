@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-// useDispatch,
+import { useSelector, useDispatch } from 'react-redux';
+import { createReservation } from '../redux/reservations/reservationSlice';
+
 export default function Reserve() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const aeroplanesData = useSelector((state) => state.aeroplanes.aeroplanes);
   const { reservedJet } = useSelector((state) => state.aeroplanes);
 
@@ -32,7 +33,7 @@ export default function Reserve() {
         aeroplane_id: reservedJet.id || data.planeName,
       },
     };
-    console.log(formData);
+    dispatch(createReservation(formData));
     setData({
       username: '',
       planeName: '',
@@ -59,12 +60,10 @@ export default function Reserve() {
                 id="username"
                 className="form-control"
                 value={userData.username}
-                onChange={(e) =>
-                  setData({
-                    ...data,
-                    username: e.target.value,
-                  })
-                }
+                onChange={(e) => setData({
+                  ...data,
+                  username: e.target.value,
+                })}
               />
             </div>
             <div className=" col-8">
@@ -76,12 +75,10 @@ export default function Reserve() {
                 value={data.planeName}
                 id="planename"
                 aria-label="Default select example"
-                onChange={(e) =>
-                  setData({
-                    ...data,
-                    planeName: e.target.value,
-                  })
-                }
+                onChange={(e) => setData({
+                  ...data,
+                  planeName: e.target.value,
+                })}
               >
                 <option selected>
                   {reservedJet.id ? reservedJet.name : 'Select menu plane'}
@@ -99,12 +96,10 @@ export default function Reserve() {
               </label>
               <input
                 value={data.totalCost}
-                onChange={(e) =>
-                  setData({
-                    ...data,
-                    totalCost: e.target.value,
-                  })
-                }
+                onChange={(e) => setData({
+                  ...data,
+                  totalCost: e.target.value,
+                })}
                 type="number"
                 className="form-control"
                 id="cost"
@@ -116,12 +111,10 @@ export default function Reserve() {
               </label>
               <input
                 value={data.startLocation}
-                onChange={(e) =>
-                  setData({
-                    ...data,
-                    startLocation: e.target.value,
-                  })
-                }
+                onChange={(e) => setData({
+                  ...data,
+                  startLocation: e.target.value,
+                })}
                 type="text"
                 className="form-control"
                 id="startLocation"
@@ -135,12 +128,10 @@ export default function Reserve() {
               </label>
               <input
                 value={data.endLocation}
-                onChange={(e) =>
-                  setData({
-                    ...data,
-                    endLocation: e.target.value,
-                  })
-                }
+                onChange={(e) => setData({
+                  ...data,
+                  endLocation: e.target.value,
+                })}
                 type="text"
                 className="form-control"
                 id="destination"
@@ -152,12 +143,10 @@ export default function Reserve() {
               </label>
               <input
                 value={data.startDate}
-                onChange={(e) =>
-                  setData({
-                    ...data,
-                    startDate: e.target.value,
-                  })
-                }
+                onChange={(e) => setData({
+                  ...data,
+                  startDate: e.target.value,
+                })}
                 type="date"
                 className="form-control"
                 id="start-date"
@@ -169,12 +158,10 @@ export default function Reserve() {
               </label>
               <input
                 value={data.endDate}
-                onChange={(e) =>
-                  setData({
-                    ...data,
-                    endDate: e.target.value,
-                  })
-                }
+                onChange={(e) => setData({
+                  ...data,
+                  endDate: e.target.value,
+                })}
                 type="date"
                 className="form-control"
                 id="end-date"
@@ -186,12 +173,10 @@ export default function Reserve() {
               </label>
               <input
                 value={data.reserveDate}
-                onChange={(e) =>
-                  setData({
-                    ...data,
-                    reserveDate: e.target.value,
-                  })
-                }
+                onChange={(e) => setData({
+                  ...data,
+                  reserveDate: e.target.value,
+                })}
                 type="date"
                 className="form-control"
                 id="reserved-date"
@@ -199,7 +184,7 @@ export default function Reserve() {
             </div>
           </div>
           <div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary px-4">
               Submit
             </button>
           </div>
