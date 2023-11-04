@@ -5,7 +5,7 @@ import reservationsReducer from './reservations/reservationSlice';
 const store = configureStore({
   reducer: {
     aeroplanes: aeroplanesReducer,
-    reservation: reservationsReducer,
+    reservations: reservationsReducer,
   },
 });
 
