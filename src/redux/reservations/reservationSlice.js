@@ -13,7 +13,6 @@ export const createReservation = createAsyncThunk(
   'reservation/createReservation',
   async (data) => {
     const url = `/api/v1/users/${data.reservation.user_id}/reservations`;
-    console.log(data);
     try {
       const { authToken } = JSON.parse(localStorage.getItem('Token'));
       const response = await axios.post(url, JSON.stringify(data), {
