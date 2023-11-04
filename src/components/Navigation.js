@@ -61,14 +61,7 @@ const Navigation = () => {
       </div>
       <div className="list-group list-group-flush flex-grow-1">
         <NavLink
-          exact
           to="/"
-          className="list-group-item list-group-item-action"
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/aeroplanes"
           className="list-group-item list-group-item-action"
         >
           Private Planes
