@@ -21,7 +21,7 @@ const AddAeroplane = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(auth);
-    dispatch(createAeroplane(aeroplane, auth));
+    dispatch(createAeroplane({ aeroplane, auth }));
   };
 
   return (

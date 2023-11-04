@@ -48,7 +48,6 @@ function Login() {
       const username = res.data.data.name;
 
       const { email, id } = res.data.data;
-      // console.log(authToken);
       setAuth({
         role,
         authToken,
@@ -56,12 +55,12 @@ function Login() {
         username,
         id,
       });
+      localStorage.setItem('Token', JSON.stringify(authToken));
       // clean the input filed
       setEmail('');
       setPwd('');
       navigate(from, { replace: true });
     } catch (err) {
-      // console.log(err);
       if (!err?.response) {
         setErrMsg('No Server Response');
       } else if (err.response?.status === 400) {

@@ -1,9 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAeroplanes, createAeroplane } from './aeroplanesActions';
+import {
+  fetchAeroplanes,
+  createAeroplane,
+  showAeroplane,
+} from './aeroplanesActions';
 
 const initialState = {
   aeroplanes: [],
+  jetShow: {},
   loading: false,
+  showLoading: false,
+  showError: '',
   error: null,
 };
 
@@ -22,7 +29,6 @@ const aeroplanesSlice = createSlice({
       .addCase(fetchAeroplanes.pending, (state) => ({
         ...state,
         loading: true,
-
       }))
       .addCase(fetchAeroplanes.fulfilled, (state, action) => ({
         ...state,
@@ -33,11 +39,21 @@ const aeroplanesSlice = createSlice({
         ...state,
         loading: false,
         error: action.error.message,
-
       }))
       .addCase(createAeroplane.fulfilled, (state, action) => {
         state.loading = false;
         aeroplanesSlice.caseReducers.aeroplaneCreated(state, action);
+      })
+      .addCase(showAeroplane.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(showAeroplane.fulfilled, (state, action) => {
+        state.loading = false;
+        state.jetShow = action.payload;
+      })
+      .addCase(showAeroplane.rejected, (state, action) => {
+        state.loading = false;
+        state.showError = action.error.message;
       });
   },
 });

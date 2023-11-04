@@ -38,14 +38,14 @@ const Aeroplane = () => {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div>
-        <h1 className="d-flex justify-content-center mb-5">Private Airplanes</h1>
+        <h1 className="d-flex justify-content-center mb-5">
+          Private Airplanes
+        </h1>
 
         {aeroplanesData.aeroplanes && aeroplanesData.aeroplanes.length > 0 ? (
           <ul className="list-unstyled d-flex flex-wrap">
             {aeroplanesData.aeroplanes.map((aeroplane) => (
-
               <AeroplaneItem key={aeroplane.id} aeroplane={aeroplane} />
-
             ))}
           </ul>
         ) : (
