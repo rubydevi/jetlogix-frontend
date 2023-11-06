@@ -17,10 +17,11 @@ export const fetchAeroplanes = createAsyncThunk(
 export const createAeroplane = createAsyncThunk(
   'aeroplanes/createAeroplane',
   async (data) => {
+    const { authToken } = JSON.parse(localStorage.getItem('Token'));
     try {
       const config = {
         headers: {
-          authorization: JSON.parse(localStorage.getItem('Token')),
+          authorization: authToken,
           'Content-Type': 'application/json',
         },
       };

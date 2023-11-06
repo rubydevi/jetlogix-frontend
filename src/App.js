@@ -24,14 +24,6 @@ function App() {
           <main className="col">
             <Routes>
               <Route
-                path="/details"
-                element={
-                  // <CenterContainer>
-                  <AeroPlaneDetails />
-                  // </CenterContainer>
-                }
-              />
-              <Route
                 path="/login"
                 element={(
                   <CenterContainer>
@@ -57,6 +49,7 @@ function App() {
                     </CenterContainer>
                   )}
                 />
+                <Route path="/details" element={<AeroPlaneDetails />} />
                 <Route
                   path="/reservations"
                   element={(

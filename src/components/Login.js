@@ -55,7 +55,10 @@ function Login() {
         username,
         id,
       });
-      localStorage.setItem('Token', JSON.stringify(authToken));
+      localStorage.setItem(
+        'Token',
+        JSON.stringify({ authToken, username, id }),
+      );
       // clean the input filed
       setEmail('');
       setPwd('');
