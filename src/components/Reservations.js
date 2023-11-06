@@ -1,20 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import AuthContext from '../context/AuthProvider';
 import { fetchReservedAeroplanes } from '../redux/aeroplanes/aeroplanesActions';
 
 const Reservations = () => {
   const dispatch = useDispatch();
-  const userAeroplanes = useSelector((state) => state.aeroplanes.userReservedAeroplanes);
+  const userAeroplanes = useSelector((state) => state.reservations.reservation);
   const loading = useSelector((state) => state.aeroplanes.reservedAeroplanesLoading);
   const error = useSelector((state) => state.aeroplanes.reservedAeroplanesError);
-
-  const userId = useContext(AuthContext).id;
-  console.log(userId);
-
+  console.log(userAeroplanes);
   useEffect(() => {
-    dispatch(fetchReservedAeroplanes(userId));
-  }, [dispatch, userId]);
+    dispatch(fetchReservedAeroplanes());
+  }, [dispatch]);
 
   if (loading) {
     return <p>Loading</p>;
@@ -29,13 +25,17 @@ const Reservations = () => {
   }
 
   return (
-    <>
+    <div>
       {userAeroplanes && userAeroplanes.length > 0 ? (
         <section className="lg:ml-[20%] mt-[4rem] lg:mt-0">
           <div className="grid grid-cols-1 gap-5 p-2 lg:grid-cols-2">
             {userAeroplanes.map((aeroplane) => (
               <ul key={aeroplane.id}>
-                <li>{aeroplane.propertyName}</li>
+                <li>{aeroplane.reserved_date}</li>
+                <li>{aeroplane.start_time}</li>
+                <li>{aeroplane.end_time}</li>
+                <li>{aeroplane.start_location}</li>
+                <li>{aeroplane.destination}</li>
               </ul>
             ))}
           </div>
@@ -45,7 +45,7 @@ const Reservations = () => {
           <p>No reserved aeroplanes found.</p>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

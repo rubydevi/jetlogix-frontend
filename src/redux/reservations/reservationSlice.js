@@ -57,7 +57,7 @@ const reservationSlice = createSlice({
 
       .addCase(fetchReservedAeroplanes.fulfilled, (state, action) => {
         state.loading = false;
-        state.values = action.payload;
+        state.reservation = action.payload;
       });
   },
 });
