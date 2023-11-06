@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ReservationCard = ({
-  reservedDate, startTime, endTime, startLocation, destination,
+  aeroplane,
 }) => (
   <div className="card mb-3" style={{ maxWidth: '18rem' }}>
     <div className="card-body">
@@ -10,38 +10,41 @@ const ReservationCard = ({
       <p className="card-text">
         <strong>Reserved Date:</strong>
         {' '}
-        {reservedDate}
+        {aeroplane.reserved_date}
       </p>
       <p className="card-text">
         <strong>Start Time:</strong>
         {' '}
-        {startTime}
+        {aeroplane.start_time}
       </p>
       <p className="card-text">
         <strong>End Time:</strong>
         {' '}
-        {endTime}
+        {aeroplane.end_time}
       </p>
       <p className="card-text">
         <strong>Start Location:</strong>
         {' '}
-        {startLocation}
+        {aeroplane.start_location}
       </p>
       <p className="card-text">
         <strong>Destination:</strong>
         {' '}
-        {destination}
+        {aeroplane.destination}
       </p>
     </div>
   </div>
 );
 
 ReservationCard.propTypes = {
-  reservedDate: PropTypes.string.isRequired,
-  startTime: PropTypes.string.isRequired,
-  endTime: PropTypes.string.isRequired,
-  startLocation: PropTypes.string.isRequired,
-  destination: PropTypes.string.isRequired,
+  aeroplane: PropTypes.shape({
+    reserved_date: PropTypes.string.isRequired,
+    start_time: PropTypes.string.isRequired,
+    end_time: PropTypes.string.isRequired,
+    start_location: PropTypes.string.isRequired,
+    destination: PropTypes.string.isRequired,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  }).isRequired,
 };
 
 export default ReservationCard;

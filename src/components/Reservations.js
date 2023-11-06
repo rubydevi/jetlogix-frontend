@@ -8,7 +8,6 @@ const Reservations = () => {
   const userAeroplanes = useSelector((state) => state.reservations.reservation);
   const loading = useSelector((state) => state.aeroplanes.reservedAeroplanesLoading);
   const error = useSelector((state) => state.aeroplanes.reservedAeroplanesError);
-  console.log(userAeroplanes);
   useEffect(() => {
     dispatch(fetchReservedAeroplanes());
   }, [dispatch]);
@@ -30,14 +29,11 @@ const Reservations = () => {
       {userAeroplanes && userAeroplanes.length > 0 ? (
         <section className="lg:ml-[20%] mt-[4rem] lg:mt-0">
           <div className="card-deck">
-            {userAeroplanes.map((aeroplane) => (
+            {userAeroplanes.map((aeroplane, index) => (
               <ReservationCard
                 key={aeroplane.id}
-                reservedDate={aeroplane.reserved_date}
-                startTime={aeroplane.start_time}
-                endTime={aeroplane.end_time}
-                startLocation={aeroplane.start_location}
-                destination={aeroplane.destination}
+                aeroplane={aeroplane}
+                index={index}
               />
             ))}
           </div>
