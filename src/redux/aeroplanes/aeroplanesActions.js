@@ -59,14 +59,16 @@ export const showAeroplane = createAsyncThunk(
 
 export const fetchReservedAeroplanes = createAsyncThunk(
   'reservation/fetchReservedAeroplanes',
-  async (userId) => {
+  async () => {
+    const { authToken, id } = JSON.parse(localStorage.getItem('Token'));
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/users/${userId}/reservations`, {
+      const response = await axios.get(`http://localhost:4000/api/v1/users/${id}/reservations`, {
         headers: {
-          Authorization: `Bearer ${JSON.parse(localStorage.getItem('Token'))}`,
+          Authorization: authToken,
           'Content-Type': 'application/json',
         },
       });
+      console.log(response.data);
       return response.data;
     } catch (error) {
       throw Error(error);
