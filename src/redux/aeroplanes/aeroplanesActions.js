@@ -55,3 +55,16 @@ export const showAeroplane = createAsyncThunk(
     }
   },
 );
+
+export const deleteAeroplane = createAsyncThunk(
+  'aeroplanes/deleteAeroplane',
+  async (data) => {
+    const url = `http://localhost:4000/api/v1/users/${data.userId}/aeroplanes/${data.aeroplaneId}`;
+    try {
+      await axios.delete(url);
+      return data.aeroplaneId;
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+);
