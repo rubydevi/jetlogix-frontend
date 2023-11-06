@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAeroplanes, deleteAeroplane } from '../redux/aeroplanes/aeroplanesActions';
+import { aeroplaneRemoved } from '../redux/aeroplanes/aeroplanesSlice';
 import useAuth from '../hooks/useAuth';
 
 const DeleteAeroplane = () => {
@@ -18,6 +19,7 @@ const DeleteAeroplane = () => {
   const handleDelete = (planeId) => {
     if (aeroplaneStatus === false) {
       dispatch(deleteAeroplane({ userId: id, aeroplaneId: planeId }));
+      dispatch(aeroplaneRemoved(planeId));
     }
   };
 
@@ -35,17 +37,19 @@ const DeleteAeroplane = () => {
               <tr key={aeroplane.id}>
                 <td>
                   {aeroplane.name}
-                  {console.log(aeroplane.isRemoved)}
                 </td>
                 <td>
-
-                  <button
-                    type="submit"
-                    onClick={() => handleDelete(aeroplane.id)}
-                    className="btn btn-danger btn-sm"
-                  >
-                    Delete
-                  </button>
+                  {aeroplane.isRemoved ? (
+                    <span className="text-danger">Deleted</span>
+                  ) : (
+                    <button
+                      type="submit"
+                      onClick={() => handleDelete(aeroplane.id)}
+                      className="btn btn-danger btn-sm"
+                    >
+                      Delete
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}
