@@ -31,6 +31,14 @@ const aeroplanesSlice = createSlice({
       );
       state.reservedJet = reserved;
     },
+    aeroplaneRemoved(state, action) {
+      const aeroplane = state.aeroplanes.aeroplanes.find(
+        (plane) => plane.id === action.payload,
+      );
+      if (aeroplane) {
+        aeroplane.isRemoved = true;
+      }
+    },
   },
 
   extraReducers: (builder) => {
@@ -76,5 +84,5 @@ const aeroplanesSlice = createSlice({
       });
   },
 });
-export const { reserveJet } = aeroplanesSlice.actions;
+export const { reserveJet, aeroplaneRemoved } = aeroplanesSlice.actions;
 export default aeroplanesSlice.reducer;
