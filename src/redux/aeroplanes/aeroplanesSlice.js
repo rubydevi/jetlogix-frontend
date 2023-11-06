@@ -3,6 +3,7 @@ import {
   fetchAeroplanes,
   createAeroplane,
   showAeroplane,
+  deleteAeroplane,
 } from './aeroplanesActions';
 
 const initialState = {
@@ -54,6 +55,16 @@ const aeroplanesSlice = createSlice({
       .addCase(showAeroplane.rejected, (state, action) => {
         state.loading = false;
         state.showError = action.error.message;
+      })
+      .addCase(deleteAeroplane.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(deleteAeroplane.fulfilled, (state) => {
+        state.loading = false;
+      })
+      .addCase(deleteAeroplane.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
       });
   },
 });
