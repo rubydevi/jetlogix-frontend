@@ -49,7 +49,7 @@ const DeleteAeroplane = () => {
                     <button
                       type="submit"
                       onClick={() => handleDelete(aeroplane.id)}
-                      className="btn btn-danger btn-sm"
+                      className="btn btn-outline-danger btn-sm mt-0"
                     >
                       Delete
                     </button>
