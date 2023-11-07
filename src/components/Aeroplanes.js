@@ -42,28 +42,37 @@ const Aeroplane = () => {
   }
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
+    <div style={{ width: '100%' }}>
       <div>
         <h1 className="d-flex justify-content-center mb-5">
           Private Airplanes
         </h1>
 
         {aeroplanesData.aeroplanes && aeroplanesData.aeroplanes.length > 0 ? (
-          <ul className="list-unstyled d-flex flex-wrap">
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={30}
+            pagination={{ clickable: true }}
+            navigation
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
             {aeroplanesData.aeroplanes.map((aeroplane) => (
-              <AeroplaneItem
-                key={aeroplane.id}
-                aeroplane={aeroplane}
-                classNames={{
-                  button: 'card m-2',
-                  aeroplaneBody: 'card-body',
-                  image: 'card-img-top',
-                  title: 'card-title fw-bold text-uppercase',
-                  description: 'card-text',
-                }}
-              />
+              <SwiperSlide key={aeroplane.id}>
+                <AeroplaneItem
+                  key={aeroplane.id}
+                  aeroplane={aeroplane}
+                  classNames={{
+                    button: 'card m-2',
+                    aeroplaneBody: '',
+                    image: 'card-img-top',
+                    title: 'fw-bold text-uppercase',
+                    description: 'card-text',
+                  }}
+                />
+              </SwiperSlide>
             ))}
-          </ul>
+          </Swiper>
         ) : (
           <p>No aeroplanes available.</p>
         )}
