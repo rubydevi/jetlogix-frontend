@@ -18,28 +18,28 @@ const Reservations = () => {
 
   if (error) {
     return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="d-flex justify-content-center align-items-center">
         <p>Something went wrong</p>
       </div>
     );
   }
 
+  const aeroplaneCards = userAeroplanes.map((aeroplane, index) => (
+    <div className="col-12 col-lg-6 mb-4" key={aeroplane.id}>
+      <ReservationCard aeroplane={aeroplane} index={index} />
+    </div>
+  ));
+
   return (
     <div>
       {userAeroplanes && userAeroplanes.length > 0 ? (
-        <section className="lg:ml-[20%] mt-[4rem] lg:mt-0">
-          <div className="card-deck">
-            {userAeroplanes.map((aeroplane, index) => (
-              <ReservationCard
-                key={aeroplane.id}
-                aeroplane={aeroplane}
-                index={index}
-              />
-            ))}
+        <section className="container mt-3">
+          <div className="row row-cols-1 row-cols-lg-2 g-4">
+            {aeroplaneCards}
           </div>
         </section>
       ) : (
-        <div className="d-flex justify-content-center align-items-center vh-100">
+        <div className="d-flex justify-content-center align-items-center">
           <p>No reserved aeroplanes found.</p>
         </div>
       )}

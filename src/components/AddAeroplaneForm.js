@@ -21,7 +21,18 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
 
     form.classList.add('was-validated');
   };
-
+  const clearFields = () => {
+    setAeroplane({
+      name: '',
+      model: '',
+      image: '',
+      description: '',
+      number_of_seats: '',
+      location: '',
+      fee: 0,
+      reserved: false,
+    });
+  };
   return (
     <div className="container">
       <form onSubmit={handleFormSubmit}>
@@ -47,7 +58,9 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
               placeholder="Model"
               value={aeroplane.model}
               onChange={(e) => handleInputChange(e, 'model')}
+              required
             />
+            <div className="invalid-feedback">Please provide a model name.</div>
           </div>
           <div className="col-12 mb-3">
             <input
@@ -57,7 +70,9 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
               id="image"
               value={aeroplane.image}
               onChange={(e) => handleInputChange(e, 'image')}
+              required
             />
+            <div className="invalid-feedback">Please provide an image url</div>
           </div>
           <div className="col-12 mb-3">
             <input
@@ -67,7 +82,9 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
               id="description"
               value={aeroplane.description}
               onChange={(e) => handleInputChange(e, 'description')}
+              required
             />
+            <div className="invalid-feedback">Please provide a description</div>
           </div>
           <div className="col-md-6 mb-3">
             <input
@@ -77,7 +94,9 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
               placeholder="Number of seats"
               value={aeroplane.number_of_seats}
               onChange={(e) => handleInputChange(e, 'number_of_seats')}
+              required
             />
+            <div className="invalid-feedback">Please provide Number of seats</div>
           </div>
           <div className="col-md-6 mb-3">
             <input
@@ -87,7 +106,9 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
               placeholder="Location"
               value={aeroplane.location}
               onChange={(e) => handleInputChange(e, 'location')}
+              required
             />
+            <div className="invalid-feedback">Please provide location</div>
           </div>
           <div className="col-md-6 mb-3">
             <input
@@ -97,15 +118,18 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
               placeholder={aeroplane.fee === 0 ? 'Enter fee' : ''}
               value={aeroplane.fee !== 0 ? aeroplane.fee : ''}
               onChange={(e) => handleInputChange(e, 'fee')}
+              required
             />
+            <div className="invalid-feedback">Please provide a fee</div>
           </div>
 
         </div>
-        <div className="col-12 mb-3">
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+        <button type="button" className="btn btn-secondary" onClick={clearFields}>
+          Clear
+        </button>
       </form>
     </div>
   );

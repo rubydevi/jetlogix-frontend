@@ -41,6 +41,7 @@ const AddAeroplane = () => {
 
   return (
     <div className="container">
+      <h2>Add a New Aeroplane</h2>
       <Toast error={error} />
       <AddAeroplaneForm
         aeroplane={aeroplane}
