@@ -3,6 +3,7 @@ import {
   fetchAeroplanes,
   createAeroplane,
   showAeroplane,
+  deleteAeroplane,
 } from './aeroplanesActions';
 
 const initialState = {
@@ -29,6 +30,14 @@ const aeroplanesSlice = createSlice({
         (plane) => plane.id === id,
       );
       state.reservedJet = reserved;
+    },
+    aeroplaneRemoved(state, action) {
+      const aeroplane = state.aeroplanes.aeroplanes.find(
+        (plane) => plane.id === action.payload,
+      );
+      if (aeroplane) {
+        aeroplane.isRemoved = true;
+      }
     },
   },
 
@@ -62,8 +71,18 @@ const aeroplanesSlice = createSlice({
       .addCase(showAeroplane.rejected, (state, action) => {
         state.loading = false;
         state.showError = action.error.message;
+      })
+      .addCase(deleteAeroplane.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(deleteAeroplane.fulfilled, (state) => {
+        state.loading = false;
+      })
+      .addCase(deleteAeroplane.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
       });
   },
 });
-export const { reserveJet } = aeroplanesSlice.actions;
+export const { reserveJet, aeroplaneRemoved } = aeroplanesSlice.actions;
 export default aeroplanesSlice.reducer;

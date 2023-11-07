@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import { showAeroplane } from '../redux/aeroplanes/aeroplanesActions';
 
-const AeroplaneItem = ({ aeroplane }) => {
+const AeroplaneItem = ({ aeroplane, classNames }) => {
   const { auth } = useAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -19,19 +19,19 @@ const AeroplaneItem = ({ aeroplane }) => {
     <li style={{ width: '18rem' }}>
       <button
         onClick={() => handleDispatch(aeroplane.id)}
-        className="card m-2"
+        className={classNames.button}
         type="button"
       >
         View
       </button>
-      <div className="card-body">
+      <div className={classNames.aeroplaneBody}>
         <img
           src={aeroplane.image}
           alt={aeroplane.name}
-          className="card-img-top"
+          className={classNames.image}
         />
-        <h6 className="card-title fw-bold text-uppercase">{aeroplane.name}</h6>
-        <p className="card-text">{aeroplane.description}</p>
+        <h6 className={classNames.title}>{aeroplane.name}</h6>
+        <p className={classNames.description}>{aeroplane.description}</p>
       </div>
     </li>
   );
@@ -43,6 +43,13 @@ AeroplaneItem.propTypes = {
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+  }).isRequired,
+  classNames: PropTypes.shape({
+    button: PropTypes.string,
+    aeroplaneBody: PropTypes.string,
+    image: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
   }).isRequired,
 };
 
