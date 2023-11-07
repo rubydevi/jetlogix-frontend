@@ -22,17 +22,16 @@ const AeroplaneItem = ({ aeroplane, classNames }) => {
         className={classNames.button}
         type="button"
       >
-        View
+        <div className={classNames.aeroplaneBody}>
+          <img
+            src={aeroplane.image}
+            alt={aeroplane.name}
+            className={classNames.image}
+          />
+          <h6 className={classNames.title}>{aeroplane.name}</h6>
+          <p className={classNames.description}>{aeroplane.description}</p>
+        </div>
       </button>
-      <div className={classNames.aeroplaneBody}>
-        <img
-          src={aeroplane.image}
-          alt={aeroplane.name}
-          className={classNames.image}
-        />
-        <h6 className={classNames.title}>{aeroplane.name}</h6>
-        <p className={classNames.description}>{aeroplane.description}</p>
-      </div>
     </li>
   );
 };
