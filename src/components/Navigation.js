@@ -5,6 +5,7 @@ import logo from '../assets/app-logo.png';
 import NavFooter from './NavFooter';
 import useAuth from '../hooks/useAuth';
 import axios from '../api/axios';
+import NavBarMobile from './NavBarMobile';
 
 const Navigation = () => {
   const { setAuth } = useAuth();
@@ -45,69 +46,82 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div
-      className={`position-absolute top-0 start-0 vh-100 bg-light border-end d-flex flex-column ${
-        isOpen && isMobile ? 'w-50' : 'w-0'
-      }`}
-      id="sidebar-wrapper"
-    >
-      <div className="sidebar-heading">
-        <img
-          alt="Logo"
-          src={logo}
-          className="img-fluid"
-          style={{ width: '150px' }}
-        />
+    <>
+      <div className="d-block d-md-none">
+        <NavBarMobile />
       </div>
-      <div className="list-group list-group-flush flex-grow-1">
-        <NavLink
-          exact
-          to="/"
-          className="list-group-item list-group-item-action"
+      <div className="d-none d-md-block">
+        <div
+          className={`position-absolute top-0 start-0 vh-100 bg-light border-end d-flex flex-column ${
+            isOpen && isMobile ? 'w-50' : 'w-0'
+          }`}
+          id="sidebar-wrapper"
         >
-          Home
-        </NavLink>
-        <NavLink
-          to="/aeroplanes"
-          className="list-group-item list-group-item-action"
-        >
-          Private Planes
-        </NavLink>
-        <NavLink
-          to="/reserve"
-          className="list-group-item list-group-item-action"
-        >
-          Reserve
-        </NavLink>
-        <NavLink
-          to="/reservations"
-          className="list-group-item list-group-item-action"
-        >
-          My Reservations
-        </NavLink>
-        <NavLink
-          to="/add_aeroplane"
-          className="list-group-item list-group-item-action"
-        >
-          Add Aeroplane
-        </NavLink>
-        <NavLink
-          to="/delete_aeroplane"
-          className="list-group-item list-group-item-action"
-        >
-          Delete Aeroplane
-        </NavLink>
-        <button
-          disabled={!authToken}
-          onClick={handleLogout}
-          type="button"
-          className="list-group-item list-group-item-action "
-        >
-          Log Out
-        </button>
-        <NavFooter />
+          <div className="sidebar-heading ps-4">
+            <img
+              alt="Logo"
+              src={logo}
+              className="img-fluid"
+              style={{ width: '150px' }}
+            />
+          </div>
+          {authToken ? (
+            <div className="list-group list-group-flush flex-grow-1">
+              <NavLink
+                exact
+                to="/"
+                className="list-group-item list-group-item-action"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/aeroplanes"
+                className="list-group-item list-group-item-action"
+              >
+                Private Planes
+              </NavLink>
+              <NavLink
+                to="/reserve"
+                className="list-group-item list-group-item-action"
+              >
+                Reserve
+              </NavLink>
+              <NavLink
+                to="/reservations"
+                className="list-group-item list-group-item-action"
+              >
+                My Reservations
+              </NavLink>
+              <NavLink
+                to="/add_aeroplane"
+                className="list-group-item list-group-item-action"
+              >
+                Add Aeroplane
+              </NavLink>
+              <NavLink
+                to="/delete_aeroplane"
+                className="list-group-item list-group-item-action"
+              >
+                Delete Aeroplane
+              </NavLink>
+              <button
+                disabled={!authToken}
+                onClick={handleLogout}
+                type="button"
+                className="list-group-item list-group-item-action "
+              >
+                Log Out
+              </button>
+              <NavFooter />
+            </div>
+          ) : (
+            <>
+              <NavFooter />
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
