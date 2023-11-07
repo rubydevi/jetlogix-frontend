@@ -43,6 +43,13 @@ const DeleteAeroplane = () => {
                   {aeroplane.name}
                 </td>
                 <td>
+                  <img
+                    src={aeroplane.image}
+                    alt={aeroplane.name}
+                    style={{ width: '100px' }}
+                  />
+                </td>
+                <td>
                   {aeroplane.isRemoved ? (
                     <span className="text-danger">Deleted</span>
                   ) : (
