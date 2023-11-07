@@ -23,7 +23,7 @@ const CardTitle = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #333;
-   font-size: 1rem;
+  font-size: 1rem;
 `;
 
 const CardText = styled.p`
@@ -31,6 +31,8 @@ const CardText = styled.p`
   line-height: 1.6;
   margin-bottom: 8px;
   font-size: 0.9rem;
+  border-bottom: 1px solid #ccc; /* Added border line */
+  padding-bottom: 5px; /* Added padding to separate lines visually */
 `;
 
 const ReservationCard = ({ aeroplane }) => (
