@@ -1,9 +1,31 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
+import axios from '../api/axios';
 import logo from '../assets/app-logo.png';
 
 function NavBarMobile() {
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
   const { authToken } = JSON.parse(localStorage.getItem('Token')) || {};
+  const handleLogout = () => {
+    setAuth({});
+    localStorage.removeItem('Token');
+    const url = '/logout';
+    if (authToken) {
+      try {
+        axios.delete(url, {
+          headers: {
+            Authorization: authToken,
+            'Content-Type': 'application/json',
+          },
+        });
+      } catch (err) {
+        throw Error(err);
+      }
+    }
+    navigate('/login');
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container w-100 d-flex justify-content-between align-items-center">
@@ -83,6 +105,16 @@ function NavBarMobile() {
                 >
                   Delete Aeroplane
                 </NavLink>
+              </li>
+              <li>
+                <button
+                  disabled={!authToken}
+                  onClick={handleLogout}
+                  type="button"
+                  className="list-group-item list-group-item-action "
+                >
+                  Log Out
+                </button>
               </li>
             </ul>
           ) : (
