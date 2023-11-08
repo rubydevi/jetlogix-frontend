@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import AuthContext from '../context/AuthProvider';
 import { fetchAeroplanes } from '../redux/aeroplanes/aeroplanesActions';
 import AeroplaneItem from './AeroplaneItem';
+import CardLoading from './CardLoading';
 
 const Aeroplane = () => {
   const dispatch = useDispatch();
@@ -18,10 +19,11 @@ const Aeroplane = () => {
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
+      <div
+        className="d-flex justify-content-center align-items-center vh-100"
+        role="status"
+      >
+        <CardLoading />
       </div>
     );
   }
@@ -41,7 +43,6 @@ const Aeroplane = () => {
         <h1 className="d-flex justify-content-center mb-5">
           Private Airplanes
         </h1>
-
         {aeroplanesData.aeroplanes && aeroplanesData.aeroplanes.length > 0 ? (
           <ul className="list-unstyled d-flex flex-wrap">
             {aeroplanesData.aeroplanes.map((aeroplane) => (

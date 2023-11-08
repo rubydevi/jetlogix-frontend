@@ -21,7 +21,7 @@ const aeroplanesSlice = createSlice({
 
   reducers: {
     aeroplaneCreated: (state, action) => {
-      state.aeroplanes.push(action.payload);
+      state.aeroplanes?.push(action.payload);
     },
     reserveJet(state, action) {
       const id = action.payload;

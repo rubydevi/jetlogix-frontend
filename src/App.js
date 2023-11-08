@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import { NavigationProvider } from './components/NavigationContext';
 import Navigation from './components/Navigation';
 import CenterContainer from './components/styledcomponents/CenterContainer';
@@ -49,7 +50,14 @@ function App() {
                     </CenterContainer>
                   )}
                 />
-                <Route path="/details" element={<AeroPlaneDetails />} />
+                <Route
+                  path="/details"
+                  element={(
+                    <CenterContainer>
+                      <AeroPlaneDetails />
+                    </CenterContainer>
+                  )}
+                />
                 <Route
                   path="/reservations"
                   element={(
@@ -94,6 +102,7 @@ function App() {
             </Routes>
           </main>
         </div>
+        <Toaster position="top-center" />
       </div>
     </NavigationProvider>
   );
