@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../assets/carousel.css';
+import CardLoading from './CardLoading';
 
 const Aeroplane = () => {
   const dispatch = useDispatch();
@@ -24,10 +25,11 @@ const Aeroplane = () => {
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
+      <div
+        className="d-flex justify-content-center align-items-center vh-100"
+        role="status"
+      >
+        <CardLoading />
       </div>
     );
   }
@@ -50,7 +52,6 @@ const Aeroplane = () => {
           </h1>
           <small className="text-muted"> (Swipe to see more)</small>
         </div>
-
         {aeroplanesData.aeroplanes && aeroplanesData.aeroplanes.length > 0 ? (
           <Swiper
             pagination={{ clickable: true }}

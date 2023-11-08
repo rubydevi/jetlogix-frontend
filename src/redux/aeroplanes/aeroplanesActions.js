@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import toast from 'react-hot-toast';
 import axios from 'axios';
 
 export const fetchAeroplanes = createAsyncThunk(
@@ -34,8 +35,10 @@ export const createAeroplane = createAsyncThunk(
         }),
         config,
       );
+      toast.success(`🎉 Aeroplane Successfully ${response.statusText} `);
       return response.data;
     } catch (error) {
+      toast.error('Opps😥 failed to create Aeroplane');
       throw Error(error);
     }
   },
