@@ -287,7 +287,7 @@ function Register() {
               Must match the first password input field.
             </p>
             <button
-              className="btn btn-color text-light"
+              className="btn-color text-light"
               type="submit"
               disabled={!validName || !validPwd || !validMatchPwd}
             >

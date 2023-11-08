@@ -202,7 +202,7 @@ export default function Reserve() {
             </div>
           </div>
           <div>
-            <button type="submit" className="btn btn-color text-light px-4">
+            <button type="submit" className="btn-color text-light px-4">
               Submit
             </button>
           </div>
