@@ -23,11 +23,13 @@ const AeroplaneItem = ({ aeroplane, classNames }) => {
         type="button"
       >
         <div className={classNames.aeroplaneBody}>
-          <img
-            src={aeroplane.image}
-            alt={aeroplane.name}
-            className={classNames.image}
-          />
+          <div className={classNames.imageContainer}>
+            <img
+              src={aeroplane.image}
+              alt={aeroplane.name}
+              className={classNames.image}
+            />
+          </div>
           <h6 className={classNames.title}>{aeroplane.name}</h6>
           <p className={classNames.description}>{aeroplane.description}</p>
         </div>
@@ -46,6 +48,7 @@ AeroplaneItem.propTypes = {
   classNames: PropTypes.shape({
     button: PropTypes.string,
     aeroplaneBody: PropTypes.string,
+    imageContainer: PropTypes.string,
     image: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
