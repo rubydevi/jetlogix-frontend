@@ -126,14 +126,23 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
         </div>
         <div className="row">
           <div className="col-12">
-            <button type="submit" className="btn btn-primary">
+            <button
+              type="submit"
+              className="btn"
+              style={{ backgroundColor: '#1A237E', color: 'white', marginRight: '10px' }}
+            >
               Submit
             </button>
-            <button type="button" className="btn btn-secondary" onClick={clearFields}>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={clearFields}
+            >
               Clear
             </button>
           </div>
         </div>
+
       </form>
     </div>
   );

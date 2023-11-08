@@ -7,7 +7,7 @@ import {
 } from './styledcomponents/ReservationStyles';
 
 const ReservationCard = ({ aeroplane }) => (
-  <div className="card mb-3" style={{ maxWidth: '200rem' }}>
+  <div>
     <Card>
       <div className="card-body">
         <CardTitle>Reservation Details</CardTitle>
@@ -15,7 +15,7 @@ const ReservationCard = ({ aeroplane }) => (
           <CardText>
             <strong>Name:</strong>
             {' '}
-            {aeroplane.reservation_name}
+            {aeroplane.name}
           </CardText>
           <CardText>
             <strong>Date:</strong>
@@ -50,7 +50,7 @@ const ReservationCard = ({ aeroplane }) => (
 
 ReservationCard.propTypes = {
   aeroplane: PropTypes.shape({
-    reservation_name: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     reserved_date: PropTypes.string.isRequired,
     start_time: PropTypes.string.isRequired,
     end_time: PropTypes.string.isRequired,

@@ -2,13 +2,10 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   background-color: #fff;
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   width: 450px;
   cursor: pointer;
-  margin-top: 20px;
-  margin-left: 20px;
 
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -25,11 +22,13 @@ export const CardTitle = styled.h2`
   margin-bottom: 10px;
   color: #333;
   font-size: 1rem;
+  display: flex; /* Set display to flex */
+  justify-content: center; /* Center the content horizontally */
 `;
 
 export const CardText = styled.p`
   color: #555;
-  line-height: 1.6;
+  line-height: 1;
   margin-bottom: 8px;
   font-size: 0.9rem;
   border-bottom: 1px solid #ccc;

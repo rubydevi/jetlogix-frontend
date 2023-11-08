@@ -32,9 +32,12 @@ const Reservations = () => {
 
   return (
     <div>
+      <div className="col-12 text-center">
+        <h3> Reservations</h3>
+      </div>
       {userAeroplanes && userAeroplanes.length > 0 ? (
         <section className="container mt-3">
-          <div className="row row-cols-1 row-cols-lg-2 g-4">
+          <div>
             {aeroplaneCards}
           </div>
         </section>
