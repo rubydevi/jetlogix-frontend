@@ -7,6 +7,8 @@ export const Card = styled.div`
   transition: box-shadow 0.3s ease;
   width: 450px;
   cursor: pointer;
+  margin-top: 20px;
+  margin-left: 20px;
 
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -31,5 +33,5 @@ export const CardText = styled.p`
   margin-bottom: 8px;
   font-size: 0.9rem;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 5px; 
+  padding-bottom: 5px;
 `;

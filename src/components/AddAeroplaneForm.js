@@ -21,6 +21,7 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
 
     form.classList.add('was-validated');
   };
+
   const clearFields = () => {
     setAeroplane({
       name: '',
@@ -33,6 +34,7 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
       reserved: false,
     });
   };
+
   return (
     <div className="container">
       <form onSubmit={handleFormSubmit}>
@@ -47,7 +49,6 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
               onChange={(e) => handleInputChange(e, 'name')}
               required
             />
-
             <div className="invalid-feedback">Please provide a valid name.</div>
           </div>
           <div className="col-md-6 mb-3">
@@ -72,7 +73,7 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
               onChange={(e) => handleInputChange(e, 'image')}
               required
             />
-            <div className="invalid-feedback">Please provide an image url</div>
+            <div className="invalid-feedback">Please provide an image URL</div>
           </div>
           <div className="col-12 mb-3">
             <input
@@ -122,19 +123,21 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
             />
             <div className="invalid-feedback">Please provide a fee</div>
           </div>
-
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-        <button type="button" className="btn btn-secondary" onClick={clearFields}>
-          Clear
-        </button>
+        <div className="row">
+          <div className="col-12">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+            <button type="button" className="btn btn-secondary" onClick={clearFields}>
+              Clear
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   );
 };
-
 AeroplaneForm.propTypes = {
   aeroplane: PropTypes.shape({
     name: PropTypes.string,
