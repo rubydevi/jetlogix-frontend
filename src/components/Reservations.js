@@ -33,14 +33,12 @@ const Reservations = () => {
   return (
     <div>
       <div className="col-12 text-center">
-        <h3> Reservations</h3>
+        <h3 className="fw-normal"> Reservations</h3>
       </div>
       {userAeroplanes && userAeroplanes.length > 0 ? (
-        <section className="container mt-3">
-          <div className="row">
-            {aeroplaneCards}
-          </div>
-        </section>
+        <div>
+          { aeroplaneCards }
+        </div>
       ) : (
         <div className="d-flex justify-content-center align-items-center">
           <p>No reserved aeroplanes found.</p>

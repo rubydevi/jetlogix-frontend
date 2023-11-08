@@ -10,53 +10,51 @@ const ReservationCard = ({ aeroplane }) => (
   <div className="row">
     <div className="col-md-6">
       <CustomCard className="card">
-        <div className="card-body">
-          <CardTitle className="card-title">Reservation Details</CardTitle>
-          <CardContent>
-            <CardText className="card-text">
-              <div>
-                <strong>Name:</strong>
-                {' '}
-                <small>{aeroplane.name}</small>
-              </div>
-            </CardText>
-            <CardText className="card-text">
-              <div>
-                <strong>Date:</strong>
-                {' '}
-                <small>{aeroplane.reserved_date}</small>
-              </div>
-            </CardText>
-            <CardText className="card-text">
-              <div>
-                <strong>Start Time:</strong>
-                {' '}
-                <small>{aeroplane.start_time}</small>
-              </div>
-            </CardText>
-            <CardText className="card-text">
-              <div>
-                <strong>End Time:</strong>
-                {' '}
-                <small>{aeroplane.end_time}</small>
-              </div>
-            </CardText>
-            <CardText className="card-text">
-              <div>
-                <strong>Start Location:</strong>
-                {' '}
-                <small>{aeroplane.start_location}</small>
-              </div>
-            </CardText>
-            <CardText className="card-text">
-              <div>
-                <strong>Destination:</strong>
-                {' '}
-                <small>{aeroplane.destination}</small>
-              </div>
-            </CardText>
-          </CardContent>
-        </div>
+        <CardTitle className="card-title">Reservation Details</CardTitle>
+        <CardContent>
+          <CardText className="card-text">
+            <div>
+              <strong>Name:</strong>
+              {' '}
+              <small>{aeroplane.name}</small>
+            </div>
+          </CardText>
+          <CardText className="card-text">
+            <div>
+              <strong>Date:</strong>
+              {' '}
+              <small>{aeroplane.reserved_date}</small>
+            </div>
+          </CardText>
+          <CardText className="card-text">
+            <div>
+              <strong>Start Time:</strong>
+              {' '}
+              <small>{aeroplane.start_time}</small>
+            </div>
+          </CardText>
+          <CardText className="card-text">
+            <div>
+              <strong>End Time:</strong>
+              {' '}
+              <small>{aeroplane.end_time}</small>
+            </div>
+          </CardText>
+          <CardText className="card-text">
+            <div>
+              <strong>Start Location:</strong>
+              {' '}
+              <small>{aeroplane.start_location}</small>
+            </div>
+          </CardText>
+          <CardText className="card-text">
+            <div>
+              <strong>Destination:</strong>
+              {' '}
+              <small>{aeroplane.destination}</small>
+            </div>
+          </CardText>
+        </CardContent>
       </CustomCard>
     </div>
   </div>
