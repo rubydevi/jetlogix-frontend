@@ -25,7 +25,7 @@ const Reservations = () => {
   }
 
   const aeroplaneCards = userAeroplanes.map((aeroplane, index) => (
-    <div className="col-6 mb-4" key={aeroplane.id}>
+    <div className="col-lg-6 col-12 mb-4" key={aeroplane.id}>
       <ReservationCard aeroplane={aeroplane} index={index} style={{ marginRight: '40px' }} />
     </div>
   ));
@@ -36,7 +36,7 @@ const Reservations = () => {
         <h3 className="fw-normal"> Reservations</h3>
       </div>
       {userAeroplanes && userAeroplanes.length > 0 ? (
-        <div>
+        <div className="row">
           { aeroplaneCards }
         </div>
       ) : (
