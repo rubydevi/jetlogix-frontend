@@ -25,11 +25,11 @@ export default function Reserve() {
     e.preventDefault();
     const formData = {
       reservation: {
-        name: data.name,
+        name: reservedJet.name || data.name,
         reserved_date: data.reserveDate,
         start_time: data.startTime,
         end_time: data.endTime,
-        start_location: reservedJet.location,
+        start_location: reservedJet.location || data.startLocation,
         destination: data.endLocation,
         user_id: userData.id,
         aeroplane_id: reservedJet.id || data.planeName,
