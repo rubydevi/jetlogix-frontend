@@ -60,18 +60,13 @@ export const showAeroplane = createAsyncThunk(
   },
 );
 
-export const fetchReservedAeroplanes = createAsyncThunk(
-  'reservation/fetchReservedAeroplanes',
-  async () => {
-    const { authToken, id } = JSON.parse(localStorage.getItem('Token'));
+export const deleteAeroplane = createAsyncThunk(
+  'aeroplanes/deleteAeroplane',
+  async (data) => {
+    const url = `http://localhost:4000/api/v1/users/${data.userId}/aeroplanes/${data.aeroplaneId}`;
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/users/${id}/reservations`, {
-        headers: {
-          Authorization: authToken,
-          'Content-Type': 'application/json',
-        },
-      });
-      return response.data;
+      await axios.delete(url);
+      return data.aeroplaneId;
     } catch (error) {
       throw Error(error);
     }
