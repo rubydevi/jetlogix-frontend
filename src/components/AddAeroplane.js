@@ -42,7 +42,7 @@ const AddAeroplane = () => {
   return (
     <div className="container">
       <div className="col-12 text-center">
-        <h3> Add a New Aeroplane</h3>
+        <h3 className="fw-normal"> Add a New Aeroplane</h3>
       </div>
       <Toast error={error} />
       <AddAeroplaneForm
