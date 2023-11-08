@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { createAeroplane } from '../redux/aeroplanes/aeroplanesActions';
 import AuthContext from '../context/AuthProvider';
 
 const AddAeroplane = () => {
   const { auth } = useContext(AuthContext);
-
   const [aeroplane, setAeroplane] = useState({
     name: '',
     model: '',
@@ -18,12 +18,21 @@ const AddAeroplane = () => {
   });
 
   const dispatch = useDispatch();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(auth);
-    dispatch(createAeroplane({ aeroplane, auth }));
-  };
+  const history = useNavigate();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await dispatch(createAeroplane({ aeroplane, auth }));
+      if (response.payload && !response.error) {
+        history('/aeroplanes');
+      } else {
+        console.error('Error or invalid response');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>

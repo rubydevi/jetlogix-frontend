@@ -1,9 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from '../../api/axios';
+import { fetchReservedAeroplanes } from '../aeroplanes/aeroplanesActions';
 
 const initialState = {
   reservedPlanes: [],
   createdReserve: {},
+  reservation: [],
   loading: false,
   showLoading: false,
   error: null,
@@ -45,6 +47,14 @@ const reservationSlice = createSlice({
       .addCase(createReservation.rejected, (state, action) => {
         state.loading = false;
         state.showError = action.error.message;
+      })
+      .addCase(fetchReservedAeroplanes.pending, (state) => {
+        state.loading = true;
+      })
+
+      .addCase(fetchReservedAeroplanes.fulfilled, (state, action) => {
+        state.loading = false;
+        state.reservation = action.payload;
       });
   },
 });

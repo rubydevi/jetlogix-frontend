@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { NavigationProvider } from './components/NavigationContext';
 import Navigation from './components/Navigation';
 import CenterContainer from './components/styledcomponents/CenterContainer';
-import Home from './components/Home';
 import Reservations from './components/Reservations';
 import Aeroplanes from './components/Aeroplanes';
 import './App.css';
@@ -42,10 +41,10 @@ function App() {
               <Route element={<RequireAuth />}>
                 <Route
                   exact
-                  path="/"
+                  path="/aeroplanes"
                   element={(
                     <CenterContainer>
-                      <Home />
+                      <Aeroplanes />
                     </CenterContainer>
                   )}
                 />
@@ -66,14 +65,7 @@ function App() {
                     </CenterContainer>
                   )}
                 />
-                <Route
-                  path="/aeroplanes"
-                  element={(
-                    <CenterContainer>
-                      <Aeroplanes />
-                    </CenterContainer>
-                  )}
-                />
+
                 <Route
                   path="/add_aeroplane"
                   element={(

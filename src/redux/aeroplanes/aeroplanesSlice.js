@@ -58,8 +58,7 @@ const aeroplanesSlice = createSlice({
         error: action.error.message,
       }))
       .addCase(createAeroplane.fulfilled, (state, action) => {
-        state.loading = false;
-        aeroplanesSlice.caseReducers.aeroplaneCreated(state, action);
+        state.aeroplanes = [...state.aeroplanes, action.payload];
       })
       .addCase(showAeroplane.pending, (state) => {
         state.loading = true;
