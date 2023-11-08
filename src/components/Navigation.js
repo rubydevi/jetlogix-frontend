@@ -50,19 +50,12 @@ const Navigation = () => {
       <div className="d-block d-md-none">
         <NavBarMobile />
       </div>
-<<<<<<< HEAD
       <div className="d-none d-md-block">
         <div
           className={`position-absolute top-0 start-0 vh-100 bg-light border-end d-flex flex-column ${
             isOpen && isMobile ? 'w-50' : 'w-0'
           }`}
           id="sidebar-wrapper"
-=======
-      <div className="list-group list-group-flush flex-grow-1">
-        <NavLink
-          to="/aeroplanes"
-          className="list-group-item list-group-item-action"
->>>>>>> b545b3b (Implemented reducers for fetch reserved|Updated display component)
         >
           <div className="sidebar-heading ps-4">
             <img
