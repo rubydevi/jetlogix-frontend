@@ -25,8 +25,8 @@ const Reservations = () => {
   }
 
   const aeroplaneCards = userAeroplanes.map((aeroplane, index) => (
-    <div className="col-12 col-lg-6 mb-4" key={aeroplane.id}>
-      <ReservationCard aeroplane={aeroplane} index={index} />
+    <div className="col-6 mb-4" key={aeroplane.id}>
+      <ReservationCard aeroplane={aeroplane} index={index} style={{ margin: '0 10px' }} />
     </div>
   ));
 
@@ -37,7 +37,7 @@ const Reservations = () => {
       </div>
       {userAeroplanes && userAeroplanes.length > 0 ? (
         <section className="container mt-3">
-          <div>
+          <div className="row">
             {aeroplaneCards}
           </div>
         </section>
