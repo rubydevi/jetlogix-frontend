@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
+export const CustomCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   background-color: #fff;
@@ -17,7 +17,6 @@ export const Card = styled.div`
     transform: translateY(-2px);
   }
 `;
-
 export const CardContent = styled.div`
   padding: 20px;
 `;

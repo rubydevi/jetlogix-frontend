@@ -1,50 +1,67 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Card, CardContent,
+  CustomCard, CardContent,
   CardTitle,
   CardText,
 } from './styledcomponents/ReservationStyles';
 
 const ReservationCard = ({ aeroplane }) => (
   <div>
-    <Card>
+    <CustomCard>
       <div className="card-body">
         <CardTitle>Reservation Details</CardTitle>
         <CardContent>
           <CardText>
-            <strong>Name:</strong>
+            <div className="text-left"><strong>Name:</strong></div>
             {' '}
-            {aeroplane.name}
+            <small>{aeroplane.name}</small>
           </CardText>
           <CardText>
-            <strong>Date:</strong>
+            <div className="text-left"><strong>Date:</strong></div>
             {' '}
-            {aeroplane.reserved_date}
+            <small>
+              {' '}
+              {aeroplane.reserved_date}
+            </small>
           </CardText>
           <CardText>
             <strong>Start Time:</strong>
             {' '}
-            {aeroplane.start_time}
+            <small>
+              {' '}
+              {aeroplane.start_time}
+              {' '}
+            </small>
           </CardText>
           <CardText>
             <strong>End Time:</strong>
             {' '}
-            {aeroplane.end_time}
+            <small>
+              {' '}
+              {aeroplane.end_time}
+              {' '}
+            </small>
           </CardText>
           <CardText>
             <strong>Start Location:</strong>
             {' '}
-            {aeroplane.start_location}
+            <small>
+              {' '}
+              {aeroplane.start_location}
+            </small>
           </CardText>
           <CardText>
             <strong>Destination:</strong>
             {' '}
-            {aeroplane.destination}
+            <small>
+              {' '}
+              {aeroplane.destination}
+            </small>
           </CardText>
         </CardContent>
       </div>
-    </Card>
+    </CustomCard>
   </div>
 );
 
