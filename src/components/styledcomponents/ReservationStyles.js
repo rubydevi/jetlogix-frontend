@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  width: 450px;
+  width: 330px;
   cursor: pointer;
+  margin-right: 10px;
+  gap: 10px;
+  padding: 10px;
 
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);

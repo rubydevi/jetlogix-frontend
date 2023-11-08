@@ -26,7 +26,7 @@ const Reservations = () => {
 
   const aeroplaneCards = userAeroplanes.map((aeroplane, index) => (
     <div className="col-6 mb-4" key={aeroplane.id}>
-      <ReservationCard aeroplane={aeroplane} index={index} style={{ margin: '0 10px' }} />
+      <ReservationCard aeroplane={aeroplane} index={index} style={{ marginRight: '40px' }} />
     </div>
   ));
 
