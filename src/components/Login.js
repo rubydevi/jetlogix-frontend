@@ -107,7 +107,7 @@ function Login() {
           autoComplete="on"
           required
         />
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-color text-light">
           Sign In
         </button>
       </form>
