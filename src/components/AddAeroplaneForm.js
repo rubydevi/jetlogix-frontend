@@ -36,7 +36,7 @@ const AeroplaneForm = ({ aeroplane, setAeroplane, handleSubmit }) => {
   return (
     <div className="container">
       <form onSubmit={handleFormSubmit}>
-        <div className="row">
+        <div className="row g-3">
           <div className="col-md-6 mb-3">
             <input
               type="text"
