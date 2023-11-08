@@ -44,7 +44,7 @@ const Aeroplane = () => {
   return (
     <div style={{ width: '100%' }}>
       <div>
-        <div className="d-flex justify-content-center align-items-center flex-column mb-2">
+        <div className="d-flex justify-content-center align-items-center flex-column mb-2 mt-5">
           <h1>
             Private Airplanes
           </h1>
@@ -56,7 +56,7 @@ const Aeroplane = () => {
             pagination={{ clickable: true }}
             navigation
             modules={[Pagination, Navigation]}
-            className="mySwiper"
+            className="mySwiper mt-5"
             breakpoints={{
               375: {
                 slidesPerView: 1,
@@ -64,7 +64,7 @@ const Aeroplane = () => {
               },
               760: {
                 slidesPerView: 3,
-                spaceBetween: 20,
+                spaceBetween: 10,
               },
             }}
           >
@@ -76,7 +76,7 @@ const Aeroplane = () => {
                   classNames={{
                     button: 'btn-slide m-2',
                     aeroplaneBody: '',
-                    imageContainer: 'image-container',
+                    imageContainer: 'image-container mb-2',
                     image: 'mb-2',
                     title: 'slide-title fw-bold text-uppercase',
                     description: 'slide-description text-muted',
