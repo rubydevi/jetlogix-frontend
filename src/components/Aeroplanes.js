@@ -45,7 +45,17 @@ const Aeroplane = () => {
         {aeroplanesData.aeroplanes && aeroplanesData.aeroplanes.length > 0 ? (
           <ul className="list-unstyled d-flex flex-wrap">
             {aeroplanesData.aeroplanes.map((aeroplane) => (
-              <AeroplaneItem key={aeroplane.id} aeroplane={aeroplane} />
+              <AeroplaneItem
+                key={aeroplane.id}
+                aeroplane={aeroplane}
+                classNames={{
+                  button: 'card m-2',
+                  aeroplaneBody: 'card-body',
+                  image: 'card-img-top',
+                  title: 'card-title fw-bold text-uppercase',
+                  description: 'card-text',
+                }}
+              />
             ))}
           </ul>
         ) : (
