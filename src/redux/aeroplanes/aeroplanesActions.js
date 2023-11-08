@@ -57,7 +57,6 @@ export const showAeroplane = createAsyncThunk(
   },
 );
 
-
 export const fetchReservedAeroplanes = createAsyncThunk(
   'reservation/fetchReservedAeroplanes',
   async () => {
@@ -70,6 +69,11 @@ export const fetchReservedAeroplanes = createAsyncThunk(
         },
       });
       return response.data;
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+);
 
 export const deleteAeroplane = createAsyncThunk(
   'aeroplanes/deleteAeroplane',
