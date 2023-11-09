@@ -42,7 +42,6 @@ const NavBarMobile = () => {
         </button>
         <div className="sidebar-heading">
           <NavLink
-            exact
             to="/"
             className="list-group-item navbar-brand list-group-item-action "
           >
@@ -59,7 +58,6 @@ const NavBarMobile = () => {
             <ul className="navbar-nav ">
               <li className="nav-item" id="navbarNav-list-1">
                 <NavLink
-                  exact
                   to="/"
                   className="list-group-item nav-link list-group-item-action "
                 >
