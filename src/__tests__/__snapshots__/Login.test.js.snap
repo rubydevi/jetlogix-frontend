@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Login component correctly 1`] = `
+<div>
+  <section
+    class=" rounded-1 login-register-style"
+  >
+    <p
+      aria-live="assertive"
+      class="offscreen"
+    />
+    <h1
+      class="header"
+    >
+      Sign In
+    </h1>
+    <form
+      class=""
+    >
+      <label
+        for="email"
+      >
+        Email:
+      </label>
+      <input
+        autocomplete="on"
+        id="email"
+        required=""
+        type="email"
+        value=""
+      />
+      <label
+        for="password"
+      >
+        Password:
+      </label>
+      <input
+        autocomplete="on"
+        id="password"
+        required=""
+        type="password"
+        value=""
+      />
+      <button
+        class="btn-color text-light"
+        type="submit"
+      >
+        Sign In
+      </button>
+    </form>
+    <p>
+      Need an Account?
+      <br />
+      <a
+        class="text-light"
+        href="/register"
+      >
+        <span
+          class="text-login"
+        >
+          Sign Up
+        </span>
+      </a>
+    </p>
+  </section>
+</div>
+`;
