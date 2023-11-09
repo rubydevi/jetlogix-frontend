@@ -42,7 +42,7 @@ const Login = () => {
         headers: { 'Content-Type': 'application/json' },
         Accept: '*/*',
       });
-      // console.log(res);
+
       const authToken = res.headers.authorization;
       const { role } = res.data.data;
       const username = res.data.data.name;
