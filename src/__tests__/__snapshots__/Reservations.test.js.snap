@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Reservations component correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="col-12 text-center"
+    >
+      <h3
+        class="fw-normal"
+      >
+         Reservations
+      </h3>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center"
+    >
+      <p>
+        No reserved aeroplanes found.
+      </p>
+    </div>
+  </div>
+</div>
+`;
