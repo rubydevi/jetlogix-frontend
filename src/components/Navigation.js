@@ -53,7 +53,7 @@ const Navigation = () => {
 
       <div className="d-none d-md-block">
         <div
-          className={`position-absolute top-0 start-0 vh-100 bg-light border-end d-flex flex-column ${
+          className={`position-fixed top-0 start-0 vh-100 bg-light border-end d-flex flex-column ${
             isOpen && isMobile ? 'w-50' : 'w-0'
           }`}
           id="sidebar-wrapper"
