@@ -21,7 +21,9 @@ const AddAeroplane = () => {
 
   const dispatch = useDispatch();
   const history = useNavigate();
+
   const [error, setError] = useState(null);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,15 +32,17 @@ const AddAeroplane = () => {
       if (response.payload && !response.error) {
         history('/aeroplanes');
       } else {
+
         setError('Something went wrong');
         const liveToast = new window.bootstrap.Toast(document.getElementById('liveToast'));
         liveToast.show();
       }
     } catch (error) {
       setError(`Error: ${error.message}`);
-    }
+        console.error('Error or invalid response');
+      }
+    } 
   };
-
   return (
     <div className="container">
       <div className="col-12 text-center">

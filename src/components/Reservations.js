@@ -18,11 +18,14 @@ const Reservations = () => {
 
   if (error) {
     return (
+
       <div className="d-flex justify-content-center align-items-center">
+
         <p>Something went wrong</p>
       </div>
     );
   }
+
 
   const aeroplaneCards = userAeroplanes.map((aeroplane, index) => (
     <div className="col-lg-6 col-12 mb-4" key={aeroplane.id}>

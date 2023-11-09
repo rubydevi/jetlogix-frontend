@@ -66,6 +66,7 @@ function App() {
                     </CenterContainer>
                   )}
                 />
+
                 <Route
                   path="/reserve"
                   element={(
@@ -74,6 +75,7 @@ function App() {
                     </CenterContainer>
                   )}
                 />
+
 
                 <Route
                   path="/add_aeroplane"

@@ -50,6 +50,7 @@ const Navigation = () => {
       <div className="d-block d-md-none">
         <NavBarMobile />
       </div>
+
       <div className="d-none d-md-block">
         <div
           className={`position-absolute top-0 start-0 vh-100 bg-light border-end d-flex flex-column ${
@@ -67,15 +68,8 @@ const Navigation = () => {
           </div>
           {authToken ? (
             <div className="list-group list-group-flush flex-grow-1">
-              <NavLink
-                exact
+               <NavLink
                 to="/"
-                className="list-group-item list-group-item-action"
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/aeroplanes"
                 className="list-group-item list-group-item-action"
               >
                 Private Planes
