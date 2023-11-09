@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { createReservation } from '../redux/reservations/reservationSlice';
 
 export default function Reserve() {
@@ -9,7 +9,6 @@ export default function Reserve() {
   const aeroplanesData = useSelector((state) => state.aeroplanes.aeroplanes);
   const { reservedJet } = useSelector((state) => state.aeroplanes);
   const userData = JSON.parse(localStorage.getItem('Token')) || {};
-
   const [data, setData] = useState({
     username: '',
     planeName: '',
@@ -36,6 +35,8 @@ export default function Reserve() {
       },
     };
     dispatch(createReservation(formData));
+    // history.push('/reservations');
+    navigate('/reservations');
     setData({
       username: '',
       planeName: '',
