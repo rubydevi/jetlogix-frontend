@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AeroPlaneDetails component correctly 1`] = `
+<div>
+  <div
+    class=" container-md d-flex flex-column flex-lg-column gap-lg-4 flex-xl-row  p-1 ms-md-5 ms-lg-2"
+  >
+    <div
+      class="col"
+    >
+      <img
+        alt=""
+        class="img-fluid  w-lg-100 imghight  rounded-1"
+      />
+    </div>
+    <div
+      class="col-xl-4"
+    >
+      <ul
+        class="list-group w-100 h-100"
+      >
+        <li
+          class="list-group-item  d-flex justify-content-end border-0"
+        >
+          <h3
+            class="info-section m-0"
+          />
+        </li>
+        <li
+          class="list-group-item border-0"
+        >
+          <p
+            class="text-right"
+          />
+        </li>
+        <li
+          class="list-group-item group-item d-flex justify-content-between gap-5"
+        >
+          Jet Model
+          <span />
+        </li>
+        <li
+          class="list-group-item group-item d-flex justify-content-between gap-5"
+        >
+          Number of seats
+          <span />
+        </li>
+        <li
+          class="list-group-item group-item d-flex justify-content-between gap-5"
+        >
+          Total payment
+          <span>
+            $
+          </span>
+        </li>
+        <li
+          class="list-group-item group-item d-flex justify-content-between gap-5"
+        >
+          Departure
+          <span />
+        </li>
+        <li
+          class="list-group-item border-0 mt-1"
+        >
+          <p>
+            5.9% APR Representative
+          </p>
+        </li>
+      </ul>
+      <div
+        class="d-flex w-100 justify-content-end"
+      >
+        <button
+          class="btn-color  rounded-5 px-4 py-2 "
+          type="button"
+        >
+          <span
+            class="me-3 text-light"
+          >
+            Reserve
+          </span>
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-circle-arrow-right "
+            data-icon="circle-arrow-right"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style="color: rgb(255, 255, 255);"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM281 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L136 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l182.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L393 239c9.4 9.4 9.4 24.6 0 33.9L281 385z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
