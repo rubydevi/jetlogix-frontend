@@ -158,8 +158,13 @@ AeroplaneForm.propTypes = {
     fee: PropTypes.number,
     reserved: PropTypes.bool,
   }).isRequired,
-  setAeroplane: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
+  setAeroplane: PropTypes.func,
+  handleSubmit: PropTypes.func,
+};
+
+AeroplaneForm.defaultProps = {
+  setAeroplane: () => {},
+  handleSubmit: () => {},
 };
 
 export default AeroplaneForm;
