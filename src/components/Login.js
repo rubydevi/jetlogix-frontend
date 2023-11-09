@@ -78,7 +78,7 @@ function Login() {
   };
 
   return (
-    <section className=" rounded-1">
+    <section className=" rounded-1 login-register-style">
       <p
         ref={errRef}
         className={errMsg ? 'errMsg' : 'offscreen'}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { createReservation } from '../redux/reservations/reservationSlice';
 
 export default function Reserve() {
@@ -10,7 +10,6 @@ export default function Reserve() {
   const { reservedJet } = useSelector((state) => state.aeroplanes);
   const userData = JSON.parse(localStorage.getItem('Token')) || {};
 
-  const navigate = useNavigate();
   const [data, setData] = useState({
     username: '',
     planeName: '',
@@ -30,7 +29,6 @@ export default function Reserve() {
         reserved_date: data.reserveDate,
         start_time: data.startTime,
         end_time: data.endTime,
-
         start_location: reservedJet.location || data.startLocation,
         destination: data.endLocation,
         user_id: userData.id,
@@ -38,8 +36,6 @@ export default function Reserve() {
       },
     };
     dispatch(createReservation(formData));
-    // history.push('/reservations');
-    navigate('/reservations');
     setData({
       username: '',
       planeName: '',
@@ -55,7 +51,6 @@ export default function Reserve() {
   };
 
   return (
-
     <form onSubmit={handleSubmit}>
       <div className="d-flex w-100  justify-content-center align-items-center">
         <h2 className="text-center ">
@@ -123,30 +118,8 @@ export default function Reserve() {
                   <option key={plane.id} value={plane.name}>
                     {plane.name}
                   </option>
-                  {aeroplanesData?.aeroplanes?.map((plane) => (
-                    <option key={plane.id} value={plane.id}>
-                      {plane.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className=" col-8">
-                <label htmlFor="startLocation" className="form-label">
-                  From Departure
-                </label>
-                <input
-                  defaultValue={
-                    reservedJet.id ? reservedJet.location : data.startLocation
-                  }
-                  onChange={(e) => setData({
-                    ...data,
-                    startLocation: e.target.value,
-                  })}
-                  type="text"
-                  className="form-control"
-                  id="startLocation"
-                />
-              </div>
+                ))}
+              </select>
             </div>
             <div className="col col-md-8">
               <label htmlFor="startLocation" className="form-label">
@@ -233,10 +206,8 @@ export default function Reserve() {
               Submit
             </button>
           </div>
-
         </div>
-      </form>
-
-    </div>
+      </div>
+    </form>
   );
 }

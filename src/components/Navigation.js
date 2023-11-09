@@ -68,7 +68,7 @@ const Navigation = () => {
           </div>
           {authToken ? (
             <div className="list-group list-group-flush flex-grow-1">
-               <NavLink
+              <NavLink
                 to="/"
                 className="list-group-item list-group-item-action"
               >

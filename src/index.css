@@ -18,12 +18,7 @@ body {
 }
 
 code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -50,6 +45,9 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
+}
+
+.login-register-style {
   background: rgba(0, 86, 143, 0.5);
   color: #fff;
 }

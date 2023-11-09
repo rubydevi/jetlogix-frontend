@@ -19,7 +19,7 @@ import LoginStyle from './components/styledcomponents/LoginStyle';
 function App() {
   return (
     <NavigationProvider>
-      <div className="container-fluid">
+      <div className="container-fluid main-height ">
         <div className="">
           <Navigation />
           <main className="col">
@@ -75,7 +75,6 @@ function App() {
                     </CenterContainer>
                   )}
                 />
-
 
                 <Route
                   path="/add_aeroplane"

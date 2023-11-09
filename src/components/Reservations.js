@@ -26,7 +26,6 @@ const Reservations = () => {
     );
   }
 
-
   const aeroplaneCards = userAeroplanes.map((aeroplane, index) => (
     <div className="col-lg-6 col-12 mb-4" key={aeroplane.id}>
       <ReservationCard aeroplane={aeroplane} index={index} style={{ marginRight: '40px' }} />
