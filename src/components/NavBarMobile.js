@@ -4,7 +4,7 @@ import useAuth from '../hooks/useAuth';
 import axios from '../api/axios';
 import logo from '../assets/app-logo.png';
 
-function NavBarMobile() {
+const NavBarMobile = () => {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
   const { authToken } = JSON.parse(localStorage.getItem('Token')) || {};
@@ -124,6 +124,6 @@ function NavBarMobile() {
       </div>
     </nav>
   );
-}
+};
 
 export default NavBarMobile;

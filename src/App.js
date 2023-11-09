@@ -16,90 +16,88 @@ import RequireAuth from './components/RequireAuth';
 import AeroPlaneDetails from './components/AeroPlaneDetails';
 import LoginStyle from './components/styledcomponents/LoginStyle';
 
-function App() {
-  return (
-    <NavigationProvider>
-      <div className="container-fluid main-height ">
-        <div className="">
-          <Navigation />
-          <main className="col">
-            <Routes>
-              <Route
-                path="/login"
-                element={(
-                  <LoginStyle>
-                    <Login />
-                  </LoginStyle>
+const App = () => (
+  <NavigationProvider>
+    <div className="container-fluid main-height ">
+      <div className="">
+        <Navigation />
+        <main className="col">
+          <Routes>
+            <Route
+              path="/login"
+              element={(
+                <LoginStyle>
+                  <Login />
+                </LoginStyle>
                 )}
+            />
+            <Route
+              path="/register"
+              element={(
+                <LoginStyle>
+                  <Register />
+                </LoginStyle>
+                )}
+            />
+            <Route element={<RequireAuth />}>
+              <Route
+                exact
+                path="/"
+                element={(
+                  <CenterContainer>
+                    <Aeroplanes />
+                  </CenterContainer>
+                  )}
               />
               <Route
-                path="/register"
+                path="/details"
                 element={(
-                  <LoginStyle>
-                    <Register />
-                  </LoginStyle>
-                )}
+                  <CenterContainer>
+                    <AeroPlaneDetails />
+                  </CenterContainer>
+                  )}
               />
-              <Route element={<RequireAuth />}>
-                <Route
-                  exact
-                  path="/"
-                  element={(
-                    <CenterContainer>
-                      <Aeroplanes />
-                    </CenterContainer>
+              <Route
+                path="/reservations"
+                element={(
+                  <CenterContainer>
+                    <Reservations />
+                  </CenterContainer>
                   )}
-                />
-                <Route
-                  path="/details"
-                  element={(
-                    <CenterContainer>
-                      <AeroPlaneDetails />
-                    </CenterContainer>
-                  )}
-                />
-                <Route
-                  path="/reservations"
-                  element={(
-                    <CenterContainer>
-                      <Reservations />
-                    </CenterContainer>
-                  )}
-                />
+              />
 
-                <Route
-                  path="/reserve"
-                  element={(
-                    <CenterContainer>
-                      <Reserve />
-                    </CenterContainer>
+              <Route
+                path="/reserve"
+                element={(
+                  <CenterContainer>
+                    <Reserve />
+                  </CenterContainer>
                   )}
-                />
+              />
 
-                <Route
-                  path="/add_aeroplane"
-                  element={(
-                    <CenterContainer>
-                      <AddAeroplane />
-                    </CenterContainer>
+              <Route
+                path="/add_aeroplane"
+                element={(
+                  <CenterContainer>
+                    <AddAeroplane />
+                  </CenterContainer>
                   )}
-                />
-                <Route
-                  path="/delete_aeroplane"
-                  element={(
-                    <CenterContainer>
-                      <DeleteAeroplane />
-                    </CenterContainer>
+              />
+              <Route
+                path="/delete_aeroplane"
+                element={(
+                  <CenterContainer>
+                    <DeleteAeroplane />
+                  </CenterContainer>
                   )}
-                />
-              </Route>
-            </Routes>
-          </main>
-        </div>
-        <Toaster position="top-center" />
+              />
+            </Route>
+          </Routes>
+        </main>
       </div>
-    </NavigationProvider>
-  );
-}
+      <Toaster position="top-center" />
+    </div>
+  </NavigationProvider>
+);
 
 export default App;

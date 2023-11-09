@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createReservation } from '../redux/reservations/reservationSlice';
 
-export default function Reserve() {
+const Reserve = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const aeroplanesData = useSelector((state) => state.aeroplanes.aeroplanes);
@@ -210,4 +210,6 @@ export default function Reserve() {
       </div>
     </form>
   );
-}
+};
+
+export default Reserve;

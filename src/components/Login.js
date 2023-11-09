@@ -7,7 +7,7 @@ import axios from '../api/axios';
 import AuthContext from '../context/AuthProvider';
 
 const LOGIN_URL = '/login';
-function Login() {
+const Login = () => {
   const { setAuth } = useContext(AuthContext);
 
   const userRef = useRef();
@@ -120,6 +120,6 @@ function Login() {
       </p>
     </section>
   );
-}
+};
 
 export default Login;
