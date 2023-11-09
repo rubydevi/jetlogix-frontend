@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Aeroplanes component correctly 1`] = `
+<div>
+  <div
+    class="d-flex justify-content-center align-items-center vh-100"
+    role="status"
+    style=""
+  >
+    <li
+      class="list-group-item"
+      style="width: 17rem;"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <img
+            alt=""
+            class=" skeleton  skeleton-card-img"
+          />
+        </div>
+        <div
+          class="d-flex justify-content-center align-items-center  w-75"
+        >
+          <div
+            class="h6 skeleton  skeleton-card-header"
+          />
+        </div>
+        <p
+          class=" skeleton skeleton-card-text"
+        />
+        <p
+          class=" skeleton  skeleton-card-text"
+        />
+        <p
+          class=" skeleton  skeleton-card-text"
+        />
+        <p
+          class=" skeleton  skeleton-card-text"
+        />
+        <p
+          class=" skeleton  skeleton-card-text"
+        />
+      </div>
+    </li>
+    <div
+      class=" d-none d-lg-block d-lg-flex justify-content-center align-items-center "
+    >
+      <li
+        class="list-group-item"
+        style="width: 17rem;"
+      >
+        <div
+          class=""
+        >
+          <div
+            class=""
+          >
+            <img
+              alt=""
+              class=" skeleton  skeleton-card-img"
+            />
+          </div>
+          <div
+            class="d-flex justify-content-center align-items-center  w-75"
+          >
+            <div
+              class="h6 skeleton  skeleton-card-header"
+            />
+          </div>
+          <p
+            class=" skeleton skeleton-card-text"
+          />
+          <p
+            class=" skeleton  skeleton-card-text"
+          />
+          <p
+            class=" skeleton  skeleton-card-text"
+          />
+          <p
+            class=" skeleton  skeleton-card-text"
+          />
+          <p
+            class=" skeleton  skeleton-card-text"
+          />
+        </div>
+      </li>
+      <li
+        class="list-group-item"
+        style="width: 17rem;"
+      >
+        <div
+          class=""
+        >
+          <div
+            class=""
+          >
+            <img
+              alt=""
+              class=" skeleton  skeleton-card-img"
+            />
+          </div>
+          <div
+            class="d-flex justify-content-center align-items-center  w-75"
+          >
+            <div
+              class="h6 skeleton  skeleton-card-header"
+            />
+          </div>
+          <p
+            class=" skeleton skeleton-card-text"
+          />
+          <p
+            class=" skeleton  skeleton-card-text"
+          />
+          <p
+            class=" skeleton  skeleton-card-text"
+          />
+          <p
+            class=" skeleton  skeleton-card-text"
+          />
+          <p
+            class=" skeleton  skeleton-card-text"
+          />
+        </div>
+      </li>
+    </div>
+  </div>
+</div>
+`;
