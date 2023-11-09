@@ -14,6 +14,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import RequireAuth from './components/RequireAuth';
 import AeroPlaneDetails from './components/AeroPlaneDetails';
+import LoginStyle from './components/styledcomponents/LoginStyle';
 
 function App() {
   return (
@@ -26,23 +27,23 @@ function App() {
               <Route
                 path="/login"
                 element={(
-                  <CenterContainer>
+                  <LoginStyle>
                     <Login />
-                  </CenterContainer>
+                  </LoginStyle>
                 )}
               />
               <Route
                 path="/register"
                 element={(
-                  <CenterContainer>
+                  <LoginStyle>
                     <Register />
-                  </CenterContainer>
+                  </LoginStyle>
                 )}
               />
               <Route element={<RequireAuth />}>
                 <Route
                   exact
-                  path="/aeroplanes"
+                  path="/"
                   element={(
                     <CenterContainer>
                       <Aeroplanes />

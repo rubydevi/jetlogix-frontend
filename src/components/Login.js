@@ -78,7 +78,7 @@ function Login() {
   };
 
   return (
-    <section>
+    <section className=" rounded-1">
       <p
         ref={errRef}
         className={errMsg ? 'errMsg' : 'offscreen'}
@@ -114,9 +114,9 @@ function Login() {
       <p>
         Need an Account?
         <br />
-        <span className="line">
-          <Link to="/register">Sign Up</Link>
-        </span>
+        <Link to="/register" className="text-light">
+          <span className="text-login">Sign Up</span>
+        </Link>
       </p>
     </section>
   );

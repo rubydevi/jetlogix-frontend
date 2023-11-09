@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import useAuth from '../hooks/useAuth';
 import { showAeroplane } from '../redux/aeroplanes/aeroplanesActions';
 
 const AeroplaneItem = ({ aeroplane, classNames }) => {
-  const { auth } = useAuth();
+  const { id } = JSON.parse(localStorage.getItem('Token')) || {};
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleDispatch = (aeroplaneId) => {
-    dispatch(showAeroplane({ userId: auth.id, aeroplaneId }));
+    dispatch(showAeroplane({ userId: id, aeroplaneId }));
     navigate('/details');
   };
 

@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
-import AuthContext from '../context/AuthProvider';
 import { fetchAeroplanes } from '../redux/aeroplanes/aeroplanesActions';
 import AeroplaneItem from './AeroplaneItem';
 import 'swiper/css';
@@ -17,7 +16,7 @@ const Aeroplane = () => {
   const loading = useSelector((state) => state.aeroplanes.loading);
   const error = useSelector((state) => state.aeroplanes.error);
 
-  const { id } = useContext(AuthContext);
+  const { id } = JSON.parse(localStorage.getItem('Token')) || {};
 
   useEffect(() => {
     dispatch(fetchAeroplanes(id));
@@ -47,9 +46,7 @@ const Aeroplane = () => {
     <div style={{ width: '100%' }}>
       <div>
         <div className="d-flex justify-content-center align-items-center flex-column mb-2 mt-5">
-          <h1>
-            Private Airplanes
-          </h1>
+          <h1>Private Airplanes</h1>
           <small className="text-muted"> (Swipe to see more)</small>
         </div>
         {aeroplanesData.aeroplanes && aeroplanesData.aeroplanes.length > 0 ? (

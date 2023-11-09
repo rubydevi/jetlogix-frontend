@@ -132,7 +132,7 @@ function Register() {
           </span>
         </section>
       ) : (
-        <section>
+        <section className="rounded-1">
           <p
             ref={errRef}
             className={`container ${errMsg ? 'errMsg' : 'offScreen'}`}
@@ -297,9 +297,9 @@ function Register() {
           <p>
             Already registered?
             <br />
-            <span className="line">
-              <Link to="/login">Sign In</Link>
-            </span>
+            <Link to="/login" className="text-light">
+              <span className="text-login"> Sign In</span>
+            </Link>
           </p>
         </section>
       )}

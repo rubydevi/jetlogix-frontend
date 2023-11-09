@@ -42,7 +42,7 @@ html {
 }
 
 section {
-  margin-top: 90px;
+  margin-top: 40px;
   width: 100%;
   max-width: 420px;
   min-height: 400px;
@@ -50,6 +50,8 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
+  background: rgba(0, 86, 143, 0.5);
+  color: #fff;
 }
 
 form {
@@ -219,6 +221,10 @@ button {
 
 .text-color {
   color: #1a237e;
+}
+
+.text-login {
+  color: #d8d8df;
 }
 
 .skeleton {
