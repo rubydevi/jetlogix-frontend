@@ -139,7 +139,7 @@ function Register() {
           >
             {errMsg}
           </p>
-          <h1>Register</h1>
+          <h3>Register</h3>
           <form onSubmit={handleSubmit}>
             <label htmlFor="username">
               Username:

@@ -6,6 +6,7 @@ const CenteredDiv = styled.div`
   align-items: center;
   margin-top: 20px;
   margin-left: 20%;
+  padding-top: 12px;
   @media (max-width: 768px) {
     margin-left: 0;
     margin-top: 0;

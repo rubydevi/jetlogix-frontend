@@ -4,7 +4,7 @@ import plane from '../../assets/golfstreamnew.png';
 const LoginStyle = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   background-image: url(${plane});
   background-size: cover;
   background-repeat: no-repeat;
