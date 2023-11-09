@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import toast from 'react-hot-toast';
 import axios from '../../api/axios';
 import { fetchReservedAeroplanes } from '../aeroplanes/aeroplanesActions';
 
@@ -23,8 +24,10 @@ export const createReservation = createAsyncThunk(
           'Content-Type': 'application/json',
         },
       });
+      toast.success(`🎉Reservation Successfully ${response.statusText} `);
       return response.data;
     } catch (err) {
+      toast.error('Opps😥 failed to create reservation');
       throw Error(err);
     }
   },

@@ -1,43 +1,68 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ReservationCard = ({
-  aeroplane,
-}) => (
-  <div className="card mb-3" style={{ maxWidth: '18rem' }}>
-    <div className="card-body">
-      <h5 className="card-title">Reservation Details</h5>
-      <p className="card-text">
-        <strong>Reserved Date:</strong>
-        {' '}
-        {aeroplane.reserved_date}
-      </p>
-      <p className="card-text">
-        <strong>Start Time:</strong>
-        {' '}
-        {aeroplane.start_time}
-      </p>
-      <p className="card-text">
-        <strong>End Time:</strong>
-        {' '}
-        {aeroplane.end_time}
-      </p>
-      <p className="card-text">
-        <strong>Start Location:</strong>
-        {' '}
-        {aeroplane.start_location}
-      </p>
-      <p className="card-text">
-        <strong>Destination:</strong>
-        {' '}
-        {aeroplane.destination}
-      </p>
-    </div>
+import {
+  CustomCard,
+  CardContent,
+  CardTitle,
+  CardText,
+} from './styledcomponents/ReservationStyles';
+
+const ReservationCard = ({ aeroplane }) => (
+  <div className="col-lg-6 mb-4">
+    <CustomCard className="card">
+      <CardTitle className="card-title">Reservation Details</CardTitle>
+      <CardContent>
+        <CardText className="card-text">
+          <div>
+            <strong>Name:</strong>
+            {' '}
+            <small>{aeroplane.name}</small>
+          </div>
+        </CardText>
+        <CardText className="card-text">
+          <div>
+            <strong>Date:</strong>
+            {' '}
+            <small>{aeroplane.reserved_date}</small>
+          </div>
+        </CardText>
+        <CardText className="card-text">
+          <div>
+            <strong>Start Time:</strong>
+            {' '}
+            <small>{aeroplane.start_time}</small>
+          </div>
+        </CardText>
+        <CardText className="card-text">
+          <div>
+            <strong>End Time:</strong>
+            {' '}
+            <small>{aeroplane.end_time}</small>
+          </div>
+        </CardText>
+        <CardText className="card-text">
+          <div>
+            <strong>Start Location:</strong>
+            {' '}
+            <small>{aeroplane.start_location}</small>
+          </div>
+        </CardText>
+        <CardText className="card-text">
+          <div>
+            <strong>Destination:</strong>
+            {' '}
+            <small>{aeroplane.destination}</small>
+          </div>
+        </CardText>
+      </CardContent>
+    </CustomCard>
   </div>
 );
 
 ReservationCard.propTypes = {
   aeroplane: PropTypes.shape({
+    name: PropTypes.string.isRequired,
     reserved_date: PropTypes.string.isRequired,
     start_time: PropTypes.string.isRequired,
     end_time: PropTypes.string.isRequired,

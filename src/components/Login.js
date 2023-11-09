@@ -78,7 +78,7 @@ function Login() {
   };
 
   return (
-    <section>
+    <section className=" rounded-1 login-register-style">
       <p
         ref={errRef}
         className={errMsg ? 'errMsg' : 'offscreen'}
@@ -107,16 +107,16 @@ function Login() {
           autoComplete="on"
           required
         />
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn-color text-light">
           Sign In
         </button>
       </form>
       <p>
         Need an Account?
         <br />
-        <span className="line">
-          <Link to="/register">Sign Up</Link>
-        </span>
+        <Link to="/register" className="text-light">
+          <span className="text-login">Sign Up</span>
+        </Link>
       </p>
     </section>
   );

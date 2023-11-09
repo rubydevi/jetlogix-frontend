@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import toast from 'react-hot-toast';
 import axios from 'axios';
 
 export const fetchAeroplanes = createAsyncThunk(
@@ -34,8 +35,10 @@ export const createAeroplane = createAsyncThunk(
         }),
         config,
       );
+      toast.success(`🎉 Aeroplane Successfully ${response.statusText} `);
       return response.data;
     } catch (error) {
+      toast.error('Opps😥 failed to create Aeroplane');
       throw Error(error);
     }
   },
@@ -62,12 +65,15 @@ export const fetchReservedAeroplanes = createAsyncThunk(
   async () => {
     const { authToken, id } = JSON.parse(localStorage.getItem('Token'));
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/users/${id}/reservations`, {
-        headers: {
-          Authorization: authToken,
-          'Content-Type': 'application/json',
+      const response = await axios.get(
+        `http://localhost:4000/api/v1/users/${id}/reservations`,
+        {
+          headers: {
+            Authorization: authToken,
+            'Content-Type': 'application/json',
+          },
         },
-      });
+      );
       return response.data;
     } catch (error) {
       throw Error(error);

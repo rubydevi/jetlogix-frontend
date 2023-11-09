@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import useAuth from '../hooks/useAuth';
 import { showAeroplane } from '../redux/aeroplanes/aeroplanesActions';
 
 const AeroplaneItem = ({ aeroplane, classNames }) => {
-  const { auth } = useAuth();
+  const { id } = JSON.parse(localStorage.getItem('Token')) || {};
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleDispatch = (aeroplaneId) => {
-    dispatch(showAeroplane({ userId: auth.id, aeroplaneId }));
+    dispatch(showAeroplane({ userId: id, aeroplaneId }));
     navigate('/details');
   };
 
@@ -22,17 +21,18 @@ const AeroplaneItem = ({ aeroplane, classNames }) => {
         className={classNames.button}
         type="button"
       >
-        View
+        <div className={classNames.aeroplaneBody}>
+          <div className={classNames.imageContainer}>
+            <img
+              src={aeroplane.image}
+              alt={aeroplane.name}
+              className={classNames.image}
+            />
+          </div>
+          <h6 className={classNames.title}>{aeroplane.name}</h6>
+          <p className={classNames.description}>{aeroplane.description}</p>
+        </div>
       </button>
-      <div className={classNames.aeroplaneBody}>
-        <img
-          src={aeroplane.image}
-          alt={aeroplane.name}
-          className={classNames.image}
-        />
-        <h6 className={classNames.title}>{aeroplane.name}</h6>
-        <p className={classNames.description}>{aeroplane.description}</p>
-      </div>
     </li>
   );
 };
@@ -47,6 +47,7 @@ AeroplaneItem.propTypes = {
   classNames: PropTypes.shape({
     button: PropTypes.string,
     aeroplaneBody: PropTypes.string,
+    imageContainer: PropTypes.string,
     image: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,

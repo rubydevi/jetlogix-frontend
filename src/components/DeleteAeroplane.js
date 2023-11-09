@@ -24,12 +24,16 @@ const DeleteAeroplane = () => {
   };
 
   return (
-    <div className="d-flex align-item-center">
+    <div className="col-sm-6 col-lg-8">
+      <h3 className="text-center">Delete Aeroplane</h3>
+      <small className="text-center d-block mb-5">Click on delete button to delete aeroplane</small>
       {aeroplanesData.aeroplanes && aeroplanesData.aeroplanes.length > 0 ? (
-        <table className="table table-borderless table-hover">
+        <table className="table table-responsive table-hover table-bordered table-striped">
           <thead>
             <tr>
-              <th>Private Planes</th>
+              <th>Private Plane</th>
+              <th>Image</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -39,13 +43,20 @@ const DeleteAeroplane = () => {
                   {aeroplane.name}
                 </td>
                 <td>
+                  <img
+                    src={aeroplane.image}
+                    alt={aeroplane.name}
+                    style={{ width: '100px' }}
+                  />
+                </td>
+                <td>
                   {aeroplane.isRemoved ? (
                     <span className="text-danger">Deleted</span>
                   ) : (
                     <button
                       type="submit"
                       onClick={() => handleDelete(aeroplane.id)}
-                      className="btn btn-danger btn-sm"
+                      className="btn btn-outline-danger btn-sm mt-0"
                     >
                       Delete
                     </button>

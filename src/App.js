@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import { NavigationProvider } from './components/NavigationContext';
 import Navigation from './components/Navigation';
 import CenterContainer from './components/styledcomponents/CenterContainer';
@@ -13,11 +14,12 @@ import Login from './components/Login';
 import Register from './components/Register';
 import RequireAuth from './components/RequireAuth';
 import AeroPlaneDetails from './components/AeroPlaneDetails';
+import LoginStyle from './components/styledcomponents/LoginStyle';
 
 function App() {
   return (
     <NavigationProvider>
-      <div className="container-fluid">
+      <div className="container-fluid main-height ">
         <div className="">
           <Navigation />
           <main className="col">
@@ -25,30 +27,37 @@ function App() {
               <Route
                 path="/login"
                 element={(
-                  <CenterContainer>
+                  <LoginStyle>
                     <Login />
-                  </CenterContainer>
+                  </LoginStyle>
                 )}
               />
               <Route
                 path="/register"
                 element={(
-                  <CenterContainer>
+                  <LoginStyle>
                     <Register />
-                  </CenterContainer>
+                  </LoginStyle>
                 )}
               />
               <Route element={<RequireAuth />}>
                 <Route
                   exact
-                  path="/aeroplanes"
+                  path="/"
                   element={(
                     <CenterContainer>
                       <Aeroplanes />
                     </CenterContainer>
                   )}
                 />
-                <Route path="/details" element={<AeroPlaneDetails />} />
+                <Route
+                  path="/details"
+                  element={(
+                    <CenterContainer>
+                      <AeroPlaneDetails />
+                    </CenterContainer>
+                  )}
+                />
                 <Route
                   path="/reservations"
                   element={(
@@ -57,6 +66,7 @@ function App() {
                     </CenterContainer>
                   )}
                 />
+
                 <Route
                   path="/reserve"
                   element={(
@@ -86,6 +96,7 @@ function App() {
             </Routes>
           </main>
         </div>
+        <Toaster position="top-center" />
       </div>
     </NavigationProvider>
   );
