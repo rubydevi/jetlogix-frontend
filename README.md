@@ -131,14 +131,14 @@ To run the project, you will need to execute:
    npm start
 ```
 
-<!-- ### Run tests
+### Run tests
 
-To run tests, run the following command:
-
+To run all tests, run the following command:
 
 ```sh
-  Rspec spec  or bundle exec rspec spec
-``` -->
+ npm test
+```
+
 
 <!-- ### Deployment
 
