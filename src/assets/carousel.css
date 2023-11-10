@@ -40,9 +40,17 @@
   font-size: 60%;
 }
 
+.mySwiper {
+  margin-top: 7%;
+}
+
 @media (max-width: 760px) {
   .swiper-button-next,
   .swiper-button-prev {
     display: none;
+  }
+
+  .mySwiper {
+    margin-top: 2%;
   }
 }

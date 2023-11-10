@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ReservationCard component correctly 1`] = `
+<div>
+  <div
+    class="col-lg-6 mb-4"
+  >
+    <div
+      class="sc-bdnyFh dFAyrg card"
+    >
+      <h2
+        class="sc-dlniIP iLvzBS card-title"
+      >
+        Reservation Details
+      </h2>
+      <div
+        class="sc-gtsqUy jFmrNm"
+      >
+        <p
+          class="sc-hKFymg cAQZBV card-text"
+        >
+          <span>
+            <strong>
+              Name:
+            </strong>
+             
+            <small>
+              Dragon 1
+            </small>
+          </span>
+        </p>
+        <p
+          class="sc-hKFymg cAQZBV card-text"
+        >
+          <span>
+            <strong>
+              Date:
+            </strong>
+             
+            <small>
+              2023-9-9
+            </small>
+          </span>
+        </p>
+        <p
+          class="sc-hKFymg cAQZBV card-text"
+        >
+          <span>
+            <strong>
+              Start Time:
+            </strong>
+             
+            <small>
+              10:00
+            </small>
+          </span>
+        </p>
+        <p
+          class="sc-hKFymg cAQZBV card-text"
+        >
+          <span>
+            <strong>
+              End Time:
+            </strong>
+             
+            <small>
+              11:00
+            </small>
+          </span>
+        </p>
+        <p
+          class="sc-hKFymg cAQZBV card-text"
+        >
+          <span>
+            <strong>
+              Start Location:
+            </strong>
+             
+            <small>
+              Lagos
+            </small>
+          </span>
+        </p>
+        <p
+          class="sc-hKFymg cAQZBV card-text"
+        >
+          <span>
+            <strong>
+              Destination:
+            </strong>
+             
+            <small>
+              Abuja
+            </small>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

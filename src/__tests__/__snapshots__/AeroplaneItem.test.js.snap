@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AeroplaneItem component correctly 1`] = `
+<div>
+  <li
+    style="width: 18rem;"
+  >
+    <button
+      class="some-button-class"
+      type="button"
+    >
+      <div
+        class="some-aeroplane-body-class"
+      >
+        <div
+          class="some-image-container-class"
+        >
+          <img
+            alt="Aeroplane 1"
+            class="some-image-class"
+            src="some-image-url"
+          />
+        </div>
+        <h6
+          class="some-title-class"
+        >
+          Aeroplane 1
+        </h6>
+        <p
+          class="some-description-class"
+        >
+          Description of Aeroplane 1
+        </p>
+      </div>
+    </button>
+  </li>
+</div>
+`;

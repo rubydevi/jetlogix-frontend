@@ -27,7 +27,11 @@ const Toast = ({ error }) => (
 );
 
 Toast.propTypes = {
-  error: PropTypes.string.isRequired,
+  error: PropTypes.string,
+};
+
+Toast.defaultProps = {
+  error: '',
 };
 
 export default Toast;

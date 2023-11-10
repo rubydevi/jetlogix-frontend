@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Reserve component correctly 1`] = `
+<div>
+  <form>
+    <div
+      class="d-flex w-100  justify-content-center align-items-center"
+    >
+      <h2
+        class="text-center "
+      >
+        You Can
+         
+        <span
+          class="text-color"
+        >
+          Reserve Now
+        </span>
+      </h2>
+    </div>
+    <div
+      class="container"
+    >
+      <div
+        class="row d-flex flex-column flex-md-row gap-0 w-100  py-1"
+      >
+        <div
+          class="col "
+        >
+          <div
+            class=" col col-md-8"
+          >
+            <label
+              class="form-label"
+              for="username"
+            >
+              Username
+            </label>
+            <input
+              class="form-control border-color"
+              id="username"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class=" col col-md-8"
+          >
+            <label
+              class="form-label"
+              for="planename"
+            >
+              Plane Model:
+            </label>
+            <select
+              aria-label="Default select example"
+              class="form-select border-color"
+              id="planename"
+            >
+              <option>
+                Select plane model
+              </option>
+            </select>
+          </div>
+          <div
+            class=" col col-md-8"
+          >
+            <label
+              class="form-label"
+              for="planename"
+            >
+              Plane Name:
+            </label>
+            <select
+              aria-label="Default select example"
+              class="form-select border-color"
+              id="planename"
+            >
+              <option>
+                Select plane menu
+              </option>
+            </select>
+          </div>
+          <div
+            class="col col-md-8"
+          >
+            <label
+              class="form-label"
+              for="startLocation"
+            >
+              From Departure
+            </label>
+            <input
+              class="form-control border-color"
+              id="startLocation"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="col"
+        >
+          <div
+            class="col col-md-8"
+          >
+            <label
+              class="form-label"
+              for="destination"
+            >
+              To Destination
+            </label>
+            <input
+              class="form-control border-color"
+              id="destination"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="col col-md-8"
+          >
+            <label
+              class="form-label"
+              for="start-date"
+            >
+              Stat time select
+            </label>
+            <input
+              class="form-control border-color"
+              id="start-date"
+              type="time"
+              value=""
+            />
+          </div>
+          <div
+            class="col col-md-8"
+          >
+            <label
+              class="form-label"
+              for="end-date"
+            >
+              End time select
+            </label>
+            <input
+              class="form-control border-color"
+              id="end-date"
+              type="time"
+              value=""
+            />
+          </div>
+          <div
+            class="col col-md-8"
+          >
+            <label
+              class="form-label"
+              for="reserved-date"
+            >
+              Reserved Date select
+            </label>
+            <input
+              class="form-control border-color"
+              id="reserved-date"
+              type="date"
+              value=""
+            />
+          </div>
+        </div>
+        <div>
+          <button
+            class="btn-color text-light px-4"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

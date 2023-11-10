@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { reserveJet } from '../redux/aeroplanes/aeroplanesSlice';
 import SkeletonLoading from '../ui/SkeletonLoading';
 
-function AeroPlaneDetails() {
+const AeroPlaneDetails = () => {
   const { jetShow, loading } = useSelector((state) => state.aeroplanes);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -80,6 +80,6 @@ function AeroPlaneDetails() {
       )}
     </>
   );
-}
+};
 
 export default AeroPlaneDetails;

@@ -14,46 +14,46 @@ const ReservationCard = ({ aeroplane }) => (
       <CardTitle className="card-title">Reservation Details</CardTitle>
       <CardContent>
         <CardText className="card-text">
-          <div>
+          <span>
             <strong>Name:</strong>
             {' '}
             <small>{aeroplane.name}</small>
-          </div>
+          </span>
         </CardText>
         <CardText className="card-text">
-          <div>
+          <span>
             <strong>Date:</strong>
             {' '}
             <small>{aeroplane.reserved_date}</small>
-          </div>
+          </span>
         </CardText>
         <CardText className="card-text">
-          <div>
+          <span>
             <strong>Start Time:</strong>
             {' '}
             <small>{aeroplane.start_time}</small>
-          </div>
+          </span>
         </CardText>
         <CardText className="card-text">
-          <div>
+          <span>
             <strong>End Time:</strong>
             {' '}
             <small>{aeroplane.end_time}</small>
-          </div>
+          </span>
         </CardText>
         <CardText className="card-text">
-          <div>
+          <span>
             <strong>Start Location:</strong>
             {' '}
             <small>{aeroplane.start_location}</small>
-          </div>
+          </span>
         </CardText>
         <CardText className="card-text">
-          <div>
+          <span>
             <strong>Destination:</strong>
             {' '}
             <small>{aeroplane.destination}</small>
-          </div>
+          </span>
         </CardText>
       </CardContent>
     </CustomCard>

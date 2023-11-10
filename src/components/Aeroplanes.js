@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper';
 import { fetchAeroplanes } from '../redux/aeroplanes/aeroplanesActions';
 import AeroplaneItem from './AeroplaneItem';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import 'swiper/swiper.min.css';
+import 'swiper/swiper-bundle.min.css';
 import '../assets/carousel.css';
 import CardLoading from './CardLoading';
 
@@ -54,7 +53,7 @@ const Aeroplane = () => {
             pagination={{ clickable: true }}
             navigation
             modules={[Pagination, Navigation]}
-            className="mySwiper mt-5"
+            className="mySwiper"
             breakpoints={{
               375: {
                 slidesPerView: 1,

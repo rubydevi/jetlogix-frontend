@@ -7,7 +7,7 @@ import axios from '../api/axios';
 import AuthContext from '../context/AuthProvider';
 
 const LOGIN_URL = '/login';
-function Login() {
+const Login = () => {
   const { setAuth } = useContext(AuthContext);
 
   const userRef = useRef();
@@ -42,7 +42,7 @@ function Login() {
         headers: { 'Content-Type': 'application/json' },
         Accept: '*/*',
       });
-      // console.log(res);
+
       const authToken = res.headers.authorization;
       const { role } = res.data.data;
       const username = res.data.data.name;
@@ -120,6 +120,6 @@ function Login() {
       </p>
     </section>
   );
-}
+};
 
 export default Login;

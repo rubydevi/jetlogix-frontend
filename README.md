@@ -15,8 +15,8 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    - [🚀 Live Demo](#live-demo)
-    - [💻 Presentation](#video-presentation)
+    <!-- - [🚀 Live Demo](#live-demo)
+    - [💻 Presentation](#video-presentation) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -80,7 +80,7 @@ JetLogix's front end is a React application that fetches and displays informatio
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
-
+<!--
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 > Live Demo of this application:
@@ -95,7 +95,7 @@ JetLogix's front end is a React application that fetches and displays informatio
 
 - [Video Presentation]()
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -131,14 +131,14 @@ To run the project, you will need to execute:
    npm start
 ```
 
-<!-- ### Run tests
+### Run tests
 
-To run tests, run the following command:
-
+To run all tests, run the following command:
 
 ```sh
-  Rspec spec  or bundle exec rspec spec
-``` -->
+ npm test
+```
+
 
 <!-- ### Deployment
 

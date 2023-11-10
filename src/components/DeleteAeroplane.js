@@ -2,15 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAeroplanes, deleteAeroplane } from '../redux/aeroplanes/aeroplanesActions';
 import { aeroplaneRemoved } from '../redux/aeroplanes/aeroplanesSlice';
-import useAuth from '../hooks/useAuth';
 
 const DeleteAeroplane = () => {
-  const { auth } = useAuth();
   const dispatch = useDispatch();
   const aeroplaneStatus = useSelector((state) => state.aeroplanes.loading);
   const aeroplanesData = useSelector((state) => state.aeroplanes.aeroplanes);
 
-  const { id } = auth;
+  const { id } = JSON.parse(localStorage.getItem('Token')) || {};
 
   useEffect(() => {
     dispatch(fetchAeroplanes(id));

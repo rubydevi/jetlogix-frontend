@@ -4,7 +4,7 @@ import useAuth from '../hooks/useAuth';
 import axios from '../api/axios';
 import logo from '../assets/app-logo.png';
 
-function NavBarMobile() {
+const NavBarMobile = () => {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
   const { authToken } = JSON.parse(localStorage.getItem('Token')) || {};
@@ -42,7 +42,6 @@ function NavBarMobile() {
         </button>
         <div className="sidebar-heading">
           <NavLink
-            exact
             to="/"
             className="list-group-item navbar-brand list-group-item-action "
           >
@@ -59,7 +58,6 @@ function NavBarMobile() {
             <ul className="navbar-nav ">
               <li className="nav-item" id="navbarNav-list-1">
                 <NavLink
-                  exact
                   to="/"
                   className="list-group-item nav-link list-group-item-action "
                 >
@@ -124,6 +122,6 @@ function NavBarMobile() {
       </div>
     </nav>
   );
-}
+};
 
 export default NavBarMobile;
