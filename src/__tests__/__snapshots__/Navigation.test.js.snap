@@ -51,7 +51,7 @@ exports[`renders Navigation component correctly 1`] = `
     class="d-none d-md-block"
   >
     <div
-      class="position-absolute top-0 start-0 vh-100 bg-light border-end d-flex flex-column w-0"
+      class="position-fixed top-0 start-0 vh-100 bg-light border-end d-flex flex-column w-0"
       id="sidebar-wrapper"
     >
       <div

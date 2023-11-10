@@ -8,9 +8,9 @@ exports[`renders Register component correctly 1`] = `
     <p
       class="container offScreen"
     />
-    <h1>
+    <h3>
       Register
-    </h1>
+    </h3>
     <form>
       <label
         for="username"
