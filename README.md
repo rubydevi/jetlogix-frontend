@@ -147,6 +147,7 @@ To run all tests, run the following command:
 - [Kanban board](https://github.com/rubydevi/jetlogix-backend/projects/1)
 
 - [Kanban board initial state ](https://user-images.githubusercontent.com/112550568/279359779-a877a136-d14e-4813-8868-68b5b7aec9e6.png)
+- We are a team of 3 members as indicated in the authors section
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
