@@ -29,7 +29,7 @@ const App = () => (
                 <LoginStyle>
                   <Login />
                 </LoginStyle>
-                )}
+              )}
             />
             <Route
               path="/register"
@@ -37,7 +37,7 @@ const App = () => (
                 <LoginStyle>
                   <Register />
                 </LoginStyle>
-                )}
+              )}
             />
             <Route element={<RequireAuth />}>
               <Route
@@ -47,7 +47,7 @@ const App = () => (
                   <CenterContainer>
                     <Aeroplanes />
                   </CenterContainer>
-                  )}
+                )}
               />
               <Route
                 path="/details"
@@ -55,7 +55,7 @@ const App = () => (
                   <CenterContainer>
                     <AeroPlaneDetails />
                   </CenterContainer>
-                  )}
+                )}
               />
               <Route
                 path="/reservations"
@@ -63,7 +63,7 @@ const App = () => (
                   <CenterContainer>
                     <Reservations />
                   </CenterContainer>
-                  )}
+                )}
               />
 
               <Route
@@ -72,7 +72,7 @@ const App = () => (
                   <CenterContainer>
                     <Reserve />
                   </CenterContainer>
-                  )}
+                )}
               />
 
               <Route
@@ -81,7 +81,7 @@ const App = () => (
                   <CenterContainer>
                     <AddAeroplane />
                   </CenterContainer>
-                  )}
+                )}
               />
               <Route
                 path="/delete_aeroplane"
@@ -89,7 +89,7 @@ const App = () => (
                   <CenterContainer>
                     <DeleteAeroplane />
                   </CenterContainer>
-                  )}
+                )}
               />
             </Route>
           </Routes>

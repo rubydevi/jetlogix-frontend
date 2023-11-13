@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { useNavigation } from './NavigationContext';
 import logo from '../assets/app-logo.png';
 import NavFooter from './NavFooter';
 import useAuth from '../hooks/useAuth';
 import axios from '../api/axios';
+
 import NavBarMobile from './NavBarMobile';
 
 const Navigation = () => {
@@ -26,7 +28,9 @@ const Navigation = () => {
             'Content-Type': 'application/json',
           },
         });
+        toast.success('Logout Successfully');
       } catch (err) {
+        toast.error('Opps😥 failed To logout');
         throw Error(err);
       }
     }

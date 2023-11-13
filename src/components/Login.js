@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from '../api/axios';
-
 import AuthContext from '../context/AuthProvider';
 
 const LOGIN_URL = '/login';
