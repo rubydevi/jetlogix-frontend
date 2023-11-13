@@ -12,6 +12,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [🚀 Back End](#back-end)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -24,6 +25,7 @@
   - [Usage](#usage)
   - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
+- [📆 Kanban Board ](#kanban-board)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -37,7 +39,11 @@
 
 # 📖 [JetLogix] <a name="about-project"></a>
 
-JetLogix's front end is a React application that fetches and displays information from the [JetLogix back-end](https://github.com/rubydevi/jetlogix-backend) via API endpoints, ensuring a seamless user interface for private jet reservations. Its engaging design delivers an immersive experience, allowing users to efficiently browse, select, and reserve private jets
+JetLogix's front end is a React application that fetches and displays aeroplanes and reservation information from the JetLogix back-end via API endpoints, ensuring a seamless user interface for private jet reservations. Its engaging design delivers an immersive experience, allowing users to efficiently create, delete, browse, select, and reserve private jets.
+
+## 🚀 BackEnd <a name="back-end"></a>
+
+ [Click here to see the JetLogix back end](https://github.com/rubydevi/jetlogix-backend)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -87,14 +93,6 @@ JetLogix's front end is a React application that fetches and displays informatio
 
 - [Live Demo Link](https://)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Video Presentation Demo <a name="video-presentation"></a>
-
-> Video Presentation of this application:
-
-- [Video Presentation]()
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 <!-- GETTING STARTED -->
 
@@ -140,20 +138,15 @@ To run all tests, run the following command:
 ```
 
 
-<!-- ### Deployment
-
-You can deploy this project using: -->
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- Kanban board -->
 
+## 📆 Kanban Board <a name="kanban-board"></a>
+
+- [Kanban board](https://github.com/rubydevi/jetlogix-backend/projects/1)
+
+- [Kanban board initial state ](https://user-images.githubusercontent.com/112550568/279359779-a877a136-d14e-4813-8868-68b5b7aec9e6.png)
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
@@ -217,7 +210,8 @@ Thank you for taking the time to explore this project! Your support means a lot 
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to express my sincere gratitude to [Microverse](https://github.com/microverseinc), the dedicated reviewers, and collaborators. Your unwavering support, feedback, and collaborative efforts have played an immense role in making this journey a resounding success. I am truly grateful for your contributions and for being an integral part of my achievements. Thank you for your continued support.
+We would like to express my sincere gratitude to [Microverse](https://github.com/microverseinc), the dedicated reviewers, and collaborators. Your unwavering support, feedback, and collaborative efforts have played an immense role in making this journey a resounding success.
+A big thank you to [Murat Korkmaz](https://www.behance.net/muratk) for the providing the UX design inspiration for this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -236,8 +230,9 @@ I would like to express my sincere gratitude to [Microverse](https://github.com/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ATTRIBUTION -->
- <!-- ## 👥 Attribution <a name="attribution"></a>
-- ProjectIcon: [Svgrepo](https://www.svgrepo.com/) -->
+ ## 👥 Attribution <a name="attribution"></a>
+- This application's front-end UI design is based on the original design by: [Murat Korkmaz](https://www.behance.net/muratk)
+
 
 <!-- LICENSE -->
 
