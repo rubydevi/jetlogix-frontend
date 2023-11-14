@@ -56,17 +56,9 @@ const NavBarMobile = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           {authToken ? (
             <ul className="navbar-nav ">
-              <li className="nav-item" id="navbarNav-list-1">
-                <NavLink
-                  to="/"
-                  className="list-group-item nav-link list-group-item-action "
-                >
-                  Home
-                </NavLink>
-              </li>
               <li className="nav-item">
                 <NavLink
-                  to="/aeroplanes"
+                  to="/"
                   className="list-group-item list-group-item-action nav-link"
                 >
                   Private Planes
