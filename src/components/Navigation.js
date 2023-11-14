@@ -10,28 +10,41 @@ import axios from '../api/axios';
 import NavBarMobile from './NavBarMobile';
 
 const Navigation = () => {
+  const [errMsg, setErrMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
   const { setAuth } = useAuth();
   const { isOpen } = useNavigation();
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const { authToken } = JSON.parse(localStorage.getItem('Token')) || {};
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     setAuth({});
     localStorage.removeItem('Token');
     const url = '/logout';
     if (authToken) {
       try {
-        axios.delete(url, {
+        const res = await axios.delete(url, {
           headers: {
             Authorization: authToken,
             'Content-Type': 'application/json',
           },
         });
-        toast.success('Logout Successfully');
+        setSuccessMsg(res.data.message);
+        setTimeout(() => {
+          toast.success(successMsg);
+        }, 90);
       } catch (err) {
-        toast.error('Opps😥 failed To logout');
-        throw Error(err);
+        if (!err?.response) {
+          setErrMsg('No Server Response');
+        } else if (err.response?.status === 401) {
+          setErrMsg(err.response.data.message);
+        } else {
+          setErrMsg('Oops 😢 failed to logout');
+        }
+        setTimeout(() => {
+          toast.error(errMsg);
+        }, 90);
       }
     }
     navigate('/login');
