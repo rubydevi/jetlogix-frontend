@@ -5,7 +5,7 @@ import axios from 'axios';
 export const fetchAeroplanes = createAsyncThunk(
   'aeroplanes/fetchAeroplanes',
   async (userId) => {
-    const url = `http://localhost:4000/api/v1/users/${userId}/aeroplanes`;
+    const url = `https://jetlogix-webservice.onrender.com/api/v1/users/${userId}/aeroplanes`;
     try {
       const response = await axios.get(url);
       return response.data;
@@ -26,7 +26,7 @@ export const createAeroplane = createAsyncThunk(
           'Content-Type': 'application/json',
         },
       };
-      const baseUrl = `http://localhost:4000/api/v1/users/${data.auth.id}/aeroplanes`;
+      const baseUrl = `https://jetlogix-webservice.onrender.com/api/v1/users/${data.auth.id}/aeroplanes`;
 
       const response = await axios.post(
         baseUrl,
@@ -47,7 +47,7 @@ export const createAeroplane = createAsyncThunk(
 export const showAeroplane = createAsyncThunk(
   'aeroplanes/showAeroplane',
   async (data) => {
-    const url = `http://localhost:4000/api/v1/users/${data.userId}/aeroplanes/${data.aeroplaneId}`;
+    const url = `https://jetlogix-webservice.onrender.com/api/v1/users/${data.userId}/aeroplanes/${data.aeroplaneId}`;
     try {
       const response = await axios.get(url, {
         authorization: JSON.parse(localStorage.getItem('Token')),
@@ -66,7 +66,7 @@ export const fetchReservedAeroplanes = createAsyncThunk(
     const { authToken, id } = JSON.parse(localStorage.getItem('Token'));
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/v1/users/${id}/reservations`,
+        `https://jetlogix-webservice.onrender.com/api/v1/users/${id}/reservations`,
         {
           headers: {
             Authorization: authToken,
@@ -84,7 +84,7 @@ export const fetchReservedAeroplanes = createAsyncThunk(
 export const deleteAeroplane = createAsyncThunk(
   'aeroplanes/deleteAeroplane',
   async (data) => {
-    const url = `http://localhost:4000/api/v1/users/${data.userId}/aeroplanes/${data.aeroplaneId}`;
+    const url = `https://jetlogix-webservice.onrender.com/api/v1/users/${data.userId}/aeroplanes/${data.aeroplaneId}`;
     try {
       await axios.delete(url);
       return data.aeroplaneId;
