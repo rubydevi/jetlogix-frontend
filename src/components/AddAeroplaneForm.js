@@ -155,7 +155,7 @@ AeroplaneForm.propTypes = {
     description: PropTypes.string,
     number_of_seats: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     location: PropTypes.string,
-    fee: PropTypes.number,
+    fee: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     reserved: PropTypes.bool,
   }).isRequired,
   setAeroplane: PropTypes.func.isRequired,
