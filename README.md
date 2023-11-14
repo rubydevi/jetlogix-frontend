@@ -159,9 +159,9 @@ To run all tests, run the following command:
 
 👤 Yonas Henok
 
-- GitHub: [@YonasHenok](https://github.com/rubydevi)
-- Twitter: [@YonasHenok3](https://twitter.com/rileycodez)
-- LinkedIn: [@Yonas Henok](https://www.linkedin.com/in/chongtham-bhoomika/)
+- GitHub: [@YonasHenok](https://github.com/Yonashenok)
+- Twitter: [@YonasHenok3](https://www.twitter.com/YonasHenok3)
+- LinkedIn: [@Yonas Henok](https://www.linkedin.com/in/yonas-henok/)
 
 👤 Riley Manda
 
