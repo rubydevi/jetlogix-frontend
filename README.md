@@ -16,8 +16,8 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    <!-- - [🚀 Live Demo](#live-demo)
-    - [💻 Presentation](#video-presentation) -->
+  - [🚀 Live Demo](#live-demo)
+  <!-- - [💻 Presentation](#video-presentation) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -86,14 +86,14 @@ JetLogix's front end is a React application that fetches and displays aeroplanes
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
-<!--
+
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 > Live Demo of this application:
 
-- [Live Demo Link](https://)
+- [Live Demo Link](https://jetlogix.onrender.com/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
